@@ -35,6 +35,7 @@ export const Header = ({ title, image }) => {
     <Box pt={6} w="full" pos="fixed">
       <Head>
         <title>Ian Sui - Frontend Developer</title>
+        <meta property="og:title" content="Ian Sui - Frontend Developer" key="title" />
         <link rel="icon" href={image} />
         <link rel="attribute" href="https://www.flaticon.com/free-icons/letter-i" />
       </Head>
