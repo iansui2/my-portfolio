@@ -1,13 +1,11 @@
 import { 
   Box, Button, Container, Heading, HStack, IconButton, 
-  Spacer, useColorMode, useDisclosure, VStack, Image
+  Spacer, useDisclosure, VStack, Image
 } from "@chakra-ui/react"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { MobileDrawer } from "./Drawer"
 import Link from "next/link"
-import Head from "next/head"
-import Typer from 'react-type-animation'
 
 const links = [
   {
@@ -33,12 +31,6 @@ export const Header = ({ title, image }) => {
 
   return (
     <Box pt={6} w="full" pos="fixed">
-      <Head>
-        <title>Ian Sui - Frontend Developer</title>
-        <meta property="og:title" content="Ian Sui - Frontend Developer" key="title" />
-        <link rel="icon" href={image} />
-        <link rel="attribute" href="https://www.flaticon.com/free-icons/letter-i" />
-      </Head>
       <Container maxW="container.xl" color="white">
         <HStack w="full" display={{ base: 'flex', md: 'none' }}>
           <Heading as="a" target="/">{title}</Heading>
