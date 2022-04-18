@@ -9,7 +9,7 @@ export const Hero = ({ image }) => (
     <Container maxW="container.md" h="full" centerContent justifyContent="center">
       <VStack spacing={4} color="white">
         <Fade left cascade duration={2000}>
-          <Heading color="white" size="4xl">I'am Ian Sui</Heading>
+          <Heading color="white" size="4xl">{`I'am Ian Sui`}</Heading>
         </Fade>
         <Heading size="lg" color="blue.500">
           <Typer sequence={[

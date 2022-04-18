@@ -73,7 +73,7 @@ export const Experience = ({ image }) => {
                     <Spacer />
                     { data.logo && 
                       <Box as="a" href={data.link} target="_blank" _hover={{ transform: 'scale(1.1)' }}>
-                        <Image src={data.logo} />
+                        <Image src={data.logo} alt="Company Logo" />
                       </Box> 
                     }
                   </HStack>

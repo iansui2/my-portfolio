@@ -23,15 +23,15 @@ export const Projects = ({ }) => (
         <Heading size="2xl">Projects</Heading>
         <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of demo projects that I have made</Text>
         <HStack spacing={4} pb={6}>
-          <Image src="../images/android.png" boxSize="50px" />
+          <Image src="../images/android.png" boxSize="50px" alt="Android" />
           <Heading size="xl" color="green.300">Android</Heading>
         </HStack>
         <VStack align="start" spacing={8} pb={16}>
           <Roll duration={2000}>
             {
               projectsData.map((data, dataKey) => (
-                <Stack direction={{ base: 'column', md: 'row' }} align="center" spacing={8}>
-                  <Image src={data.image} h="500px" />
+                <Stack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" spacing={8}>
+                  <Image src={data.image} h="500px" alt={title} />
                   <VStack align="start">
                     <Heading>{data.title}</Heading>
                     <Text pb={4}>{data.description}</Text>

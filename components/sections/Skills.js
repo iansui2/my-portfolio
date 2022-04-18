@@ -106,7 +106,7 @@ export const Skills = ({ image }) => {
                         {
                           programmingData.slice(0, 3).map((data, dataKey) =>(
                             <VStack align="center" spacing={2} key={dataKey}>
-                              <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                              <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
                               <Text color="white">{data.title}</Text>
                             </VStack>
                           ))
@@ -118,7 +118,7 @@ export const Skills = ({ image }) => {
                           programmingData.slice(3, 6).map((data, dataKey) =>(
                             <VStack align="center" spacing={2} key={dataKey}>
                               <Box as="a" target="_blank" href={data.link}>
-                                <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                                <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
                               </Box>
                               <Text color="white">{data.title}</Text>
                             </VStack>
@@ -134,9 +134,9 @@ export const Skills = ({ image }) => {
                               {
                                 data.link ?
                                   <Box as="a" target="_blank" href={data.link}>
-                                    <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                                    <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
                                   </Box> :
-                                  <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                                  <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
                               }
                               <Text color="white">{data.title}</Text>
                             </VStack>
@@ -156,7 +156,7 @@ export const Skills = ({ image }) => {
                       {
                         programmingData.slice(8, 11).map((data, dataKey) =>(
                           <VStack align="center" spacing={2} key={dataKey}>
-                            <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                            <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
                             <Text color="white">{data.title}</Text>
                           </VStack>
                         ))

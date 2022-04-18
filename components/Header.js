@@ -68,22 +68,22 @@ export const Header = ({ title, image }) => {
           <VStack align="start" spacing={4} color="white">
             {
               links.map((link, linkKey) => (
-                <Link href={link.href} passHref>
-                  <Button key={linkKey} _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
+                <Link key={linkKey} href={link.href} passHref>
+                  <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
                 </Link>  
               ))  
             }
           </VStack>
         </MobileDrawer>
         <HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
-          <Link href="/">
-            <Image h="50px" src={image} />
+          <Link href="/" passHref>
+            <Image h="50px" src={image} alt="Ian Sui Icon" />
           </Link>
           <Spacer />
           {
             links.map((link, linkKey) => (
-              <Link href={link.href} passHref>
-                <Button key={linkKey} _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
+              <Link key={linkKey} href={link.href} passHref>
+                <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
               </Link>  
             ))  
           }
