@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react"
-import { Fragment } from "react"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { About } from "../components/sections/About"
@@ -16,8 +15,7 @@ export default function Home() {
       <Head>
         <title>Ian Sui - Frontend Developer</title>
         <meta property="og:title" content="Ian Sui - Frontend Developer" key="title" />
-        <link rel="icon" href={image} />
-        <link rel="attribute" href="https://www.flaticon.com/free-icons/letter-i" />
+        <link rel="icon" href="../images/i.png" />
       </Head>
       <Header title="Ian Sui" image="../images/i.png" />
       <Hero image="../images/background.jpg" />
