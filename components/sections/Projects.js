@@ -31,7 +31,7 @@ export const Projects = ({ }) => (
             {
               projectsData.map((data, dataKey) => (
                 <Stack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" spacing={8}>
-                  <Image src={data.image} h="500px" alt={title} />
+                  <Image src={data.image} h="500px" alt={data.title} />
                   <VStack align="start">
                     <Heading>{data.title}</Heading>
                     <Text pb={4}>{data.description}</Text>
