@@ -28,12 +28,14 @@ export const About = ({ image }) => (
       <VStack spacing={12} color="white">
         <Heading size="2xl">About Me</Heading>
         <Avatar src={image} boxShadow="base" boxSize="200px" />
-        <Slide right duration={2000}>
+        <Slide left duration={2000}>
           <VStack spacing={1} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg">
             <Text>{`I'm Ian Sui and I'm a graduating student on the degree of BS Computer Science.`}</Text>
             <Text>{`I'm currently working as a Frontend Developer at Xircus NFT Marketplace.`}</Text>
           </VStack>
-          <Grid templateColumns={{ base: 'auto', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={6}>
+        </Slide>  
+        <Grid templateColumns={{ base: 'auto', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={6}>
+          <Slide left duration={2000}>
             {
               aboutData.map((data, dataKey) => (
                 <VStack key={dataKey} spacing={4} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg">
@@ -43,8 +45,8 @@ export const About = ({ image }) => (
                 </VStack>
               ))
             }
-          </Grid>
-        </Slide>
+            </Slide>
+        </Grid>
       </VStack>
     </Container>
   </Box>

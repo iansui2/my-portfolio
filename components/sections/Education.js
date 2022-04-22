@@ -4,7 +4,7 @@ import { FcSettings } from "react-icons/fc"
 import { FaMedal } from "react-icons/fa"
 import { CustomTag } from "../CustomTag"
 import { useState } from "react";
-import { Rotate } from "react-reveal";
+import { Fade } from "react-reveal";
 
 const educationData = [
   {
@@ -34,7 +34,7 @@ export const Education = ({ image }) => {
             <Heading size="2xl">Education</Heading>
             <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my educational attaintment</Text>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={24}>
-              <Rotate duration={2000}>
+              <Fade duration={2000}>
                 {
                   educationData.map((data, dataKey) => (
                     <VStack key={dataKey} spacing={4} align="start" fontSize="xl">
@@ -61,7 +61,7 @@ export const Education = ({ image }) => {
                     </VStack>
                   ))
                 }
-              </Rotate>
+              </Fade>
             </Stack>
           </VStack>
         </Container>

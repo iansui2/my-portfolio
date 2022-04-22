@@ -1,5 +1,5 @@
 import { Box, Container, VStack, Heading, Text, HStack, Image, Button, Stack, Center } from "@chakra-ui/react";
-import { Roll } from "react-reveal";
+import { Slide } from "react-reveal";
 
 const projectsData = [
   {
@@ -26,21 +26,21 @@ export const Projects = ({ }) => (
           <Image src="../images/android.png" boxSize="50px" alt="Android" />
           <Heading size="xl" color="green.300">Android</Heading>
         </HStack>
-        <VStack align="start" spacing={8} pb={16}>
-          <Roll duration={2000}>
+        <VStack align={{ base: 'center', md: 'start' }} spacing={8} pb={16}>
+          <Slide left duration={2000}>
             {
               projectsData.map((data, dataKey) => (
                 <Stack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" spacing={8}>
                   <Image src={data.image} h="500px" alt={data.title} />
-                  <VStack align="start">
+                  <VStack align={{ base: 'center', md: 'start' }}>
                     <Heading>{data.title}</Heading>
-                    <Text pb={4}>{data.description}</Text>
+                    <Text pb={4} textAlign="center">{data.description}</Text>
                     <Button as="a" href={data.file} target="_blank" bgColor="green.400" _hover={{ bgColor: 'green.100' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>Download</Button>
                   </VStack>
                 </Stack>  
               ))
             }
-          </Roll>
+          </Slide>
         </VStack> 
       </VStack>
     </Container>

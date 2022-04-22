@@ -9,16 +9,16 @@ export const Hero = ({ image }) => (
     <Container maxW="container.md" h="full" centerContent justifyContent="center">
       <VStack spacing={4} color="white">
         <Fade left cascade duration={2000}>
-          <Heading color="white" size="4xl">{`I'am Ian Sui`}</Heading>
+          <Heading color="white" textAlign="center" size="4xl">{`I'am Ian Sui`}</Heading>
         </Fade>
-        <Heading size="lg" color="blue.500">
+        <Heading size="lg" color="blue.500" textAlign="center">
           <Typer sequence={[
-            "Frontend Developer at Xircus NFT Marketplace", 15000,
-            '', 15000,
-            "Current Skillset: ReactJS, NextJS, Chakra UI", 15000,
-            '', 15000,
-            "BS Computer Science Graduating Student", 15000,
-            '', 15000
+            "Frontend Developer at Xircus NFT Marketplace", 3000,
+            '', 1000,
+            "Current Skillset: ReactJS, NextJS, Chakra UI", 3000,
+            '', 1000,
+            "BS Computer Science Graduating Student", 3000,
+            '', 1000
           ]} repeat={Infinity} wrapper="span" />   
         </Heading>
         <Spacer />

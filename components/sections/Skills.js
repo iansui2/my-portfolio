@@ -4,7 +4,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Flip } from "react-reveal";
+import { Bounce, Flip } from "react-reveal";
 
 const tabItems = [
   "Programming",
@@ -98,7 +98,7 @@ export const Skills = ({ image }) => {
               </TabList>
               <TabPanels>
                 <TabPanel px={{ base: 0, lg: 24 }} py={0}>
-                  <Flip duration={2000}>
+                  <Bounce duration={2000}>
                     <VStack spacing={2} align="start">
                       <Text fontSize="xl" fontWeight="bold" color="blue.300">Web Development</Text>
                       <Text fontSize="lg" color="white" pb={4}>Basic Fundamentals</Text>
@@ -144,10 +144,10 @@ export const Skills = ({ image }) => {
                         }
                       </HStack>
                     </VStack>
-                  </Flip>
+                  </Bounce>
                 </TabPanel>
                 <TabPanel px={{base: 0, lg: 24 }} py={0}>
-                  <Flip duration={2000}>
+                  <Bounce duration={2000}>
                     <VStack spacing={2} align="start">
                       <Text fontSize="xl" fontWeight="bold" color="blue.300">Operating Systems</Text>
                       <Text fontSize="lg" color="white" pb={6}>Basic Knowledge</Text>
@@ -162,7 +162,7 @@ export const Skills = ({ image }) => {
                         ))
                       }
                     </HStack>   
-                  </Flip>
+                  </Bounce>
                 </TabPanel>
               </TabPanels>
             </Tabs>
