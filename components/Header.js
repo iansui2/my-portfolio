@@ -30,13 +30,12 @@ export const Header = ({ title, image }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box pt={6} w="full" pos="fixed" zIndex="1000">
+    <Box pt={6} w="full" pos="fixed" zIndex={1000}>
       <Container maxW="container.xl" color="white">
-        <HStack w="full" display={{ base: 'flex', md: 'none' }}>
+        <HStack justify="space-between" display={{ base: 'flex', md: 'none' }}>
           <Link href="/" passHref>
             <Image h="50px" src={image} alt="Ian Sui Icon" />
           </Link>          
-          <Spacer />
           <IconButton 
             variant="ghost"
             borderRadius="xs"
@@ -47,11 +46,10 @@ export const Header = ({ title, image }) => {
           />
         </HStack>
         <MobileDrawer isOpen={isOpen} onClose={onClose}>
-          <HStack spacing={2} py={6} color="white">
+          <HStack justify="space-between" spacing={2} py={6} color="white">
             <Link href="/" passHref>
               <Image h="50px" src={image} alt="Ian Sui Icon" />
-            </Link>            
-            <Spacer />
+            </Link>  
             <IconButton
               variant="outline"
               borderRadius="xs"

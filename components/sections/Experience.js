@@ -43,12 +43,12 @@ export const Experience = ({ image }) => {
             <Heading size="2xl">Work Experience</Heading>
             <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my work experience</Text>
           </VStack>
-          <VStack align="start" spacing={28}>
+          <VStack align="start" spacing={28} w="full">
             <Zoom duration={2000}>
               {
                 experienceData.map((data, dataKey) => (
-                  <HStack key={dataKey} align="center">
-                    <VStack spacing={4} align="start" fontSize="xl">
+                  <HStack key={dataKey} align="center" w="full">
+                    <VStack spacing={4} align="start" w="full" fontSize="xl">
                       <HStack spacing={4}>
                         <IconButton 
                           variant="unstyled"

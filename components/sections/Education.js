@@ -12,6 +12,7 @@ const educationData = [
     course: "BS Computer Science",
     specialization: "Web Development",
     school: "AMA Computer College Fairview",
+    link: "https://www.amaes.edu.ph/",
     award: "Dean's Lister",
     timeframe: "2018-2022"
   },
@@ -19,6 +20,7 @@ const educationData = [
     level: "Secondary",
     course: "Tech Voc-ICT",
     school: "AMA Computer College Fairview",
+    link: "https://www.amaes.edu.ph/",
     award: "Highest Honor",
     timeframe: "2016-2018"
   }
@@ -54,7 +56,7 @@ export const Education = ({ image }) => {
                             <Text fontWeight="bold">{data.specialization}</Text>
                           </VStack>
                       }
-                      <Text>{data.school}</Text>
+                      <Text as="a" href={data.link} target="_blank" fontWeight="bold" _hover={{ transform: 'scale(1.05)' }}>{data.school}</Text>
                       <CustomTag label="Award" icon={FaMedal} />
                       <Text fontWeight="bold">{data.award}</Text>
                       <Text>{data.timeframe}</Text>

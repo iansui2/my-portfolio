@@ -41,7 +41,7 @@ export const Projects = ({ }) => (
               ))
             }
           </Slide>
-        </VStack> 
+        </VStack>
       </VStack>
     </Container>
   </Box>

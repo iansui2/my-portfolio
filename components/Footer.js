@@ -5,9 +5,9 @@ export const Footer = ({ }) => (
   <Box pt={16} pb={4}>
     <Container maxW="container.xl">
       <Stack direction={{ base: 'column', md: 'row' }} color="white">
-        <HStack spacing={1}>
+        <HStack spacing={1} fontWeight="bold">
           <Text>Powered by</Text>
-          <Text color="gray">Heroku</Text>
+          <Text as="a" href="https://vercel.com/" target="_blank" color="blue.500" _hover={{ transform: 'scale(1.1)' }}>Vercel</Text>
         </HStack>
         <Spacer />
         <HStack>
@@ -35,9 +35,9 @@ export const Footer = ({ }) => (
             icon={<BsGithub fontSize={16} color="white" />} />
         </HStack>
         <Spacer />
-        <HStack spacing={1}>
+        <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="gray">April 17</Text>
+          <Text color="blue.500" _hover={{ transform: 'scale(1.1)' }}>April 23</Text>
         </HStack>
       </Stack>
     </Container>

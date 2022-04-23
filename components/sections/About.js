@@ -27,9 +27,9 @@ export const About = ({ image }) => (
     <Container maxW="container.xl">
       <VStack spacing={12} color="white">
         <Heading size="2xl">About Me</Heading>
-        <Avatar src={image} boxShadow="base" boxSize="200px" />
+        <Avatar src={image} _hover={{ transform: 'scale(1.05)' }} boxShadow="base" boxSize="200px" />
         <Slide left duration={2000}>
-          <VStack spacing={1} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg">
+          <VStack spacing={1} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg" _hover={{ transform: 'scale(1.05)' }}>
             <Text>{`I'm Ian Sui and I'm a graduating student on the degree of BS Computer Science.`}</Text>
             <Text>{`I'm currently working as a Frontend Developer at Xircus NFT Marketplace.`}</Text>
           </VStack>
@@ -38,7 +38,7 @@ export const About = ({ image }) => (
           <Slide left duration={2000}>
             {
               aboutData.map((data, dataKey) => (
-                <VStack key={dataKey} spacing={4} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg">
+                <VStack key={dataKey} spacing={4} bgColor="blue.500" h="full" p={8} borderRadius="lg" fontSize="lg" _hover={{ transform: 'scale(1.05)' }}>
                   {data.icon}
                   <Heading>{data.title}</Heading>
                   <Text textAlign="start">{data.description}</Text>
