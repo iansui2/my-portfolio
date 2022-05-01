@@ -71,9 +71,9 @@ export const Skills = ({ image }) => {
   }, [orientation])
 
   return (  
-    <Box id="skills" minH="900px" bgImg={image} bgSize="cover">
-      <Box h="900px" bgColor="rgba(0,0,0,0.7)">
-        <Container pt={32} pb={48} maxW="container.xl" color="white"> 
+    <Box id="skills" minH="1000px" bgImg={image} bgSize="cover">
+      <Box h="1000px" bgColor="rgba(0,0,0,0.7)">
+        <Container maxW="container.xl" color="white" py={36}> 
           <VStack align="center">
             <Heading size="2xl">Skills</Heading>
             <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my technical skills in my chosen field</Text>

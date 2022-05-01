@@ -23,7 +23,7 @@ const aboutData = [
 ]
 
 export const About = ({ image }) => (
-  <Box pt={32}>
+  <Box id="about" pt={32}>
     <Container maxW="container.xl">
       <VStack spacing={12} color="white">
         <Heading size="2xl">About Me</Heading>

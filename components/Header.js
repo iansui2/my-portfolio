@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { 
   Box, Button, Container, Heading, HStack, IconButton, 
   Spacer, useDisclosure, VStack, Image
@@ -8,6 +9,10 @@ import { MobileDrawer } from "./Drawer"
 import Link from "next/link"
 
 const links = [
+  {
+    title: 'About',
+    href: '#about'
+  },
   {
     title: 'Education',
     href: '#education'
@@ -28,6 +33,9 @@ const links = [
 
 export const Header = ({ title, image }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [chosenLink, setChosenLink] = useState('')
+
+  console.log(chosenLink)
 
   return (
     <Box pt={6} w="full" pos="fixed" zIndex={1000}>
@@ -64,13 +72,17 @@ export const Header = ({ title, image }) => {
             {
               links.map((link, linkKey) => (
                 <Link key={linkKey} href={link.href} passHref>
-                  <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
+                  <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500'}} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} 
+                  onClick={() => {
+                    onClose()
+                    setChosenLink(link.title)
+                  }}>{link.title}</Button>
                 </Link>  
               ))  
             }
           </VStack>
         </MobileDrawer>
-        <HStack spacing={4} display={{ base: 'none', md: 'flex' }}>
+        <HStack spacing={12} display={{ base: 'none', md: 'flex' }}>
           <Link href="/" passHref>
             <Image h="50px" src={image} alt="Ian Sui Icon" />
           </Link>
@@ -78,7 +90,7 @@ export const Header = ({ title, image }) => {
           {
             links.map((link, linkKey) => (
               <Link key={linkKey} href={link.href} passHref>
-                <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="md" _hover={{ color: 'blue.500'}}>{link.title}</Button>
+                <Button _focus={{ borderColor: 'white' }} variant="link" fontSize="lg" _hover={{ color: 'blue.500'}} color={chosenLink == link.title ? 'blue.500' : 'white'} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
               </Link>  
             ))  
           }
