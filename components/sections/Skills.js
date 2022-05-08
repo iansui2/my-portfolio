@@ -80,8 +80,8 @@ export const Skills = ({ image }) => {
             <Tabs 
               variant="unstyled"
               orientation={orient}>
-              <TabList minW="200px" overflow="auto" pb={8}>
-                { 
+              <TabList minW="200px" overflow="auto" mr={12} mb={12}>
+                {
                   tabItems.map((tabItem, tabKey) => (
                     <Tab
                       key={tabKey}

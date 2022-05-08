@@ -67,7 +67,7 @@ export const Projects = ({ }) => (
           {
             projectsData.map((data, dataKey) => (
               <Stack key={dataKey} direction={{ base: 'column', lg: 'row' }} w="full" align="center" spacing={12}>
-                <Carousel showArrows={false} itemsToShow={1}>
+                <Carousel showArrows={false} autoTabIndexVisibleItems={false} itemsToShow={1}>
                   {
                     data.images.map((data, dataKey) => (
                       <Image key={dataKey} h="500px" src={data.image} alt={data.title} />
@@ -84,11 +84,9 @@ export const Projects = ({ }) => (
           }
         </VStack>
       </VStack>
-      <VStack align="center">
-        <HStack spacing={4}>
-          <FaReact fontSize={40} color="white" />  
-          <Heading color="white">Web Development Projects Coming Soon!</Heading>
-        </HStack>
+      <VStack align="center" spacing={6}>
+        <FaReact fontSize={120} color="white" />  
+        <Heading color="white">Web Development Projects Coming Soon!</Heading>
       </VStack>
     </Container>
   </Box>
