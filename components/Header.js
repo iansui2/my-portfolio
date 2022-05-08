@@ -80,15 +80,15 @@ export const Header = ({ title, image }) => {
             <VStack align="start" w="full" spacing={4} color="white">
               {
                 links.map((link, linkKey) => (
-                  <HStack w="full" justify="space-between">
-                    <Link key={linkKey} href={link.href} passHref>
+                  <HStack key={linkKey} w="full" justify="space-between">
+                    <Link href={link.href} passHref>
                       <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500'}} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} 
                       onClick={() => {
                         onClose()
                         setChosenLink(link.title)
                       }}>{link.title}</Button>
                     </Link>
-                    <Link key={linkKey} href={link.href} passHref>
+                    <Link href={link.href} passHref>
                       <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : 'white'} icon={link.icon} 
                         onClick={() => {
                           onClose()
