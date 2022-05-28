@@ -28,7 +28,7 @@ export const Hero = ({ image }) => (
               as="a" 
               href="https://www.linkedin.com/in/ronan-ian-d-sui-913100134/" 
               target="_blank"
-              _hover={{ bgColor: 'blue.200' }}
+              _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
               _active={{ bgColor: 'blue.200' }}
               _focus={{ borderColor: 'blue.500' }} 
               bgColor="blue.500" 
@@ -41,7 +41,7 @@ export const Hero = ({ image }) => (
               as="a" 
               href="https://github.com/iansui2" 
               target="_blank"
-              _hover={{ bgColor: 'gray.900' }}
+              _hover={{ bgColor: 'gray.900', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
               _active={{ bgColor: 'gray.900' }}
               _focus={{ borderColor: 'gray.900' }}
               bgColor="black" 

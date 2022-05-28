@@ -30,7 +30,7 @@ export const About = ({ image }) => (
         <Avatar src={image} _hover={{ transform: 'scale(1.05)' }} boxShadow="base" boxSize="200px" />
         <Slide left duration={2000}>
           <VStack spacing={1} bgColor="blue.500" p={6} borderRadius="lg" fontSize="lg" _hover={{ transform: 'scale(1.05)' }}>
-            <Text>{`I'm Ian Sui and I'm a graduating student on the degree of BS Computer Science.`}</Text>
+            <Text>{`I'm Ian Sui and I'm a graduating student with the degree of BS Computer Science.`}</Text>
             <Text>{`I'm currently working as a Frontend Developer at Xircus NFT Marketplace.`}</Text>
           </VStack>
         </Slide>  

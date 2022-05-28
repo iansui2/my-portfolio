@@ -82,7 +82,7 @@ export const Header = ({ title, image }) => {
                 links.map((link, linkKey) => (
                   <HStack key={linkKey} w="full" justify="space-between">
                     <Link href={link.href} passHref>
-                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500'}} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} 
+                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} 
                       onClick={() => {
                         onClose()
                         setChosenLink(link.title)
@@ -134,7 +134,7 @@ export const Header = ({ title, image }) => {
           {
             links.map((link, linkKey) => (
               <Link key={linkKey} href={link.href} passHref>
-                <Button _focus={{ borderColor: 'white' }} variant="link" fontSize="lg" _hover={{ color: 'blue.500'}} color={chosenLink == link.title ? 'blue.500' : 'white'} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                <Button _focus={{ borderColor: 'white' }} variant="link" fontSize="lg" _hover={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
               </Link>  
             ))  
           }
