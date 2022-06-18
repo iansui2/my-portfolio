@@ -73,7 +73,7 @@ export const Skills = ({ }) => (
                 skillsData.slice(0,6).map((skill, skillKey) => (
                   <VStack align="center" spacing={2} key={skillKey}>
                     <Image src={skill.image} boxSize="70px" _hover={{ transform: 'scale(1.1)' }} alt={skill.title} />
-                    <Text ontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
+                    <Text fontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
                   </VStack>
                 ))
               }

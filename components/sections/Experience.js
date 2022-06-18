@@ -27,7 +27,7 @@ export const Experience = ({ }) => (
       <Stack direction={{ base: 'column', lg: 'row' }} align="start" spacing={32}>
         <VStack align="start" spacing={8}>
           <Heading size="3xl">Work Experience</Heading>
-          <Text fontSize="xl" w={{ base: 'auto', lg: '500px' }}>Hi, I'm currently a Frontend Developer 👨‍💻. I have 6 Months Experience on using ReactJS, Chakra UI, and NextJS. I currently work on Xircus NFT Marketplace and Appdeture.</Text>
+          <Text fontSize="xl" w={{ base: 'auto', lg: '500px' }}>Hi, I&rsquo;m currently a Frontend Developer 👨‍💻. I have 6 Months Experience on using ReactJS, Chakra UI, and NextJS. I currently work on Xircus NFT Marketplace and Appdeture.</Text>
           <Image src="../images/design-2.png" alt="Design" />
         </VStack>
         <VStack spacing={16}>

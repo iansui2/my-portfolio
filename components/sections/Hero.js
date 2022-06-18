@@ -8,7 +8,7 @@ export const Hero = () => (
       <Stack direction={{ base: 'column', md: 'row' }} align="center" justify="center" h="full" w="full">
         <VStack align="start" justify="center" h="700px" w="full" spacing={4}>
           <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="3xl">I Have Web Development Experience and Skills</Heading>
-          <Text fontWeight="semibold" fontSize="lg" w={{ base: 'auto', lg: '500px' }} pb={4}>Hi, I'm Ian Sui and I'm a Frontend Developer on Appdeture and Xircus NFT Marketplace.</Text>
+          <Text fontWeight="semibold" fontSize="lg" w={{ base: 'auto', lg: '500px' }} pb={4}>Hi, I&rsquo;m Ian Sui and I'm a Frontend Developer on Appdeture and Xircus NFT Marketplace.</Text>
           <Stack direction={{ base: 'column', lg: 'row' }} pb={8}>
             <Button 
               as="a" 
