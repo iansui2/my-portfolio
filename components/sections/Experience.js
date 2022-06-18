@@ -1,30 +1,19 @@
-import { Box, Heading, Text, VStack, Container, HStack, Image, IconButton, Spacer } from "@chakra-ui/react";
-import Head from "next/head";
-import { useState } from "react"
-import { MdOutlineWork } from "react-icons/md"
-import { Zoom } from "react-reveal";
+import { Box, Heading, Text, VStack, Container, Stack, Image } from "@chakra-ui/react"
 
 const experienceData = [
   {
-    level: "Full Time",
     title: "Frontend Developer",
-    logo: "../images/xircus.webp",
     company: "Appdeture",
-    link: "https://xircus.app/",
-    description: "I'm currently a frontend developed at Xircus NFT Marketplace with the skills in using ReactJS, Chakra UI and NextJS.",
+    description: "I'm currently a frontend developer at Appdeture and Xircus NFT Marketplace with the skills in using ReactJS, Chakra UI and NextJS.",
     timeframe: "January 2022 - Present"
   },
   {
-    level: "Internship",
     title: "Software Developer",
-    logo: "../images/evotech.webp",
     company: "Evotech",
-    link: "https://evolvesoftware.com.ph/",
     description: "I was trained as an Intern on Evotech to be a software developer in the field that I want. I chose the filed of mobile development and created a simple application in Kotlin.",
     timeframe: "May 2021 - June 2021"
   },
   {
-    level: "Internship",
     title: "C# Developer",
     company: "BC TECH HQ",
     description: "I was trained as an Intern on BC TECH HQ to be familiarized with C# and to develop applications using C#.",
@@ -32,57 +21,28 @@ const experienceData = [
   }
 ]
 
-export const Experience = ({ image }) => {
-  const [sliderValue, setSliderValue] = useState(100)
-
-  return (
-    <Box id="experience" h="full" bgImg={image} bgSize="cover">
-      <Box h="full" bgColor="rgba(0,0,0,0.7)">
-        <Container pt={32} pb={48} maxW="container.xl" color="white"> 
-          <VStack align="start">
-            <Heading size="2xl">Work Experience</Heading>
-            <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my work experience</Text>
-          </VStack>
-          <VStack align="start" spacing={28} w="full">
-            <Zoom duration={2000}>
-              {
-                experienceData.map((data, dataKey) => (
-                  <HStack key={dataKey} align="center" w="full">
-                    <VStack spacing={4} align="start" w="full" fontSize="xl">
-                      <HStack spacing={4}>
-                        <IconButton 
-                          variant="unstyled"
-                          _focus={{ borderColor: 'white' }}
-                          icon={<MdOutlineWork fontSize={48} />}
-                          onClick={() => {
-                            if (dataKey === 0) {
-                              setSliderValue(100)
-                            } else if (dataKey === 1) {
-                              setSliderValue(65)
-                            } else {
-                              setSliderValue(27)
-                            }
-                          }}/>
-                        <Heading size="lg">{data.title}</Heading>
-                      </HStack>
-                      <Heading fontWeight="bold" size="md" pb={3}>{data.company}</Heading>
-                      <Text>{data.level}</Text>
-                      <Text>{data.description}</Text>
-                      <Text>{data.timeframe}</Text>
-                    </VStack>
-                    <Spacer />
-                    { data.logo && 
-                      <Box as="a" href={data.link} target="_blank" _hover={{ transform: 'scale(1.1)' }}>
-                        <Image src={data.logo} alt="Company Logo" />
-                      </Box> 
-                    }
-                  </HStack>
-                ))
-              }
-            </Zoom>
-          </VStack>
-        </Container>
-      </Box>
-    </Box>
-  )
-}
+export const Experience = ({ }) => (
+  <Box id="experience" pos="relative" h="full" bg="white" py={40}>
+    <Container maxW="container.xl"> 
+      <Stack direction={{ base: 'column', lg: 'row' }} align="start" spacing={32}>
+        <VStack align="start" spacing={8}>
+          <Heading size="3xl">Work Experience</Heading>
+          <Text fontSize="xl" w={{ base: 'auto', lg: '500px' }}>Hi, I'm currently a Frontend Developer 👨‍💻. I have 6 Months Experience on using ReactJS, Chakra UI, and NextJS. I currently work on Xircus NFT Marketplace and Appdeture.</Text>
+          <Image src="../images/design-2.png" alt="Design" />
+        </VStack>
+        <VStack spacing={16}>
+          {
+            experienceData.map((data, dataKey) => (
+              <VStack key={dataKey} borderLeftWidth={5} pl={4} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
+                <Heading size="lg" textAlign="center">{data.title}</Heading>
+                <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
+                <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.timeframe}</Text>
+                <Text fontSize="lg">{data.description}</Text>
+              </VStack>
+            )) 
+          }
+        </VStack>
+      </Stack>
+    </Container>
+  </Box>
+)

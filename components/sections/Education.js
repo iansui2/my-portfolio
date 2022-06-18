@@ -1,73 +1,43 @@
-import { Box, Container, Heading, HStack, IconButton, Slider, SliderFilledTrack, SliderMark, SliderThumb, SliderTrack, Spacer, Stack, Text, VStack } from "@chakra-ui/react";
-import { GiGraduateCap } from "react-icons/gi"
-import { FcSettings } from "react-icons/fc"
-import { FaMedal } from "react-icons/fa"
-import { CustomTag } from "../CustomTag"
-import { useState } from "react";
-import { Fade } from "react-reveal";
+import { Box, Container, Heading, Icon, Stack, Text, VStack } from "@chakra-ui/react";
+import { IoSchool } from "react-icons/io5"
+import { FaSchool } from "react-icons/fa"
 
 const educationData = [
   {
-    level: "Tertiary",
     course: "BS Computer Science",
-    specialization: "Web Development",
     school: "AMA Computer College Fairview",
-    link: "https://www.amaes.edu.ph/",
-    award: "Dean's Lister",
-    timeframe: "2018-2022"
+    icon: IoSchool,
+    description: "Expecting to be a BS Computer Science Graduate this year with a specialization in Web Development."
   },
   {
-    level: "Secondary",
     course: "Tech Voc-ICT",
     school: "AMA Computer College Fairview",
-    link: "https://www.amaes.edu.ph/",
-    award: "Highest Honor",
-    timeframe: "2016-2018"
+    icon: FaSchool,
+    description: "A High School Graduate with an award of Highest Honor and specialized in ict specifically on programming."
   }
 ]
 
-export const Education = ({ image }) => {
-  const [sliderValue, setSliderValue] = useState(100)
-  return (
-    <Box id="education" mt={48} h="full" bgImg={image} bgSize="cover">
-      <Box h="full" bgColor="rgba(0,0,0,0.7)">
-        <Container pt={32} pb={64} maxW="container.xl"> 
-          <VStack align="center" color="white">
-            <Heading size="2xl">Education</Heading>
-            <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my educational attaintment</Text>
-            <Stack direction={{ base: 'column', md: 'row' }} spacing={24}>
-              <Fade duration={2000}>
-                {
-                  educationData.map((data, dataKey) => (
-                    <VStack key={dataKey} spacing={4} align="start" fontSize="xl">
-                      <HStack spacing={4}>
-                        <IconButton 
-                          variant="unstyled"
-                          _focus={{ borderColor: 'white' }}
-                          icon={<GiGraduateCap fontSize={48} />}
-                          onClick={() => dataKey === 0 ? setSliderValue(100) : setSliderValue(40)}/>
-                        <Heading size="lg">{data.level}</Heading>
-                      </HStack>
-                      <Heading size="lg" pb={3}>{data.course}</Heading>
-                      {
-                        data.specialization &&
-                          <VStack align="start">
-                            <CustomTag label="Specialization" icon={FcSettings} />
-                            <Text fontWeight="bold">{data.specialization}</Text>
-                          </VStack>
-                      }
-                      <Text as="a" href={data.link} target="_blank" fontWeight="bold" _hover={{ transform: 'scale(1.05)' }}>{data.school}</Text>
-                      <CustomTag label="Award" icon={FaMedal} />
-                      <Text fontWeight="bold">{data.award}</Text>
-                      <Text>{data.timeframe}</Text>
-                    </VStack>
-                  ))
-                }
-              </Fade>
-            </Stack>
-          </VStack>
-        </Container>
-      </Box>
-    </Box>
-  )
-}
+export const Education = ({ }) => (
+  <Box id="education" py={40} h="full" bg="blue.500">
+    <Container maxW="container.xl">
+      <VStack align="start" spacing={12}>
+        <VStack align="start" spacing={8}>
+          <Heading size="3xl" color="white">Education</Heading>
+          <Text color="white" fontSize="xl">This is my educational background as a former student on Computer Studies</Text>
+        </VStack>
+        <Stack direction={{ base: 'column', lg: 'row' }} spacing={16}>
+          {
+            educationData.map((data, dataKey) => (
+              <VStack key={dataKey} align="center" color="white" direction={{ base: 'column', md: 'row' }} _hover={{ bg: 'white', color: 'blue.500', transform: 'scale(1.05)' }} p={12} spacing={2}>
+                <Icon as={data.icon} boxSize="100px" />
+                <Heading size="lg" textAlign="center">{data.course}</Heading>
+                <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.school}</Text>
+                <Text fontSize="lg" textAlign="center">{data.description}</Text>
+              </VStack>
+            )) 
+          }
+        </Stack>
+      </VStack>
+    </Container>
+  </Box>
+)

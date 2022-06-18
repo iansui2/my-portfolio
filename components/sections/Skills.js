@@ -1,17 +1,11 @@
 import { 
-  Box, Container, VStack, Heading, Text, Tabs, TabList, 
-  Tab, TabPanels, TabPanel, useBreakpointValue, Stack, Image, HStack
+  Box, Container, VStack, Heading, Text, Grid, Stack, Image
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Bounce, Flip } from "react-reveal";
 
-const tabItems = [
-  "Programming",
-  "Other Skills"
-]
-
-const programmingData = [
+const skillsData = [
   {
     title: "HTML",
     image: "../images/html.png"
@@ -26,27 +20,15 @@ const programmingData = [
   },
   {
     title: "ReactJS",
-    image: "../images/react.png",
-    link: "https://reactjs.org/"
+    image: "../images/react.png"
   },
   {
     title: "NextJS",
     image: "../images/next.png",
-    link: "https://nextjs.org/"
   },
   {
     title: "Chakra UI",
-    image: "../images/chakra.png",
-    link: "https://chakra-ui.com/"
-  },
-  {
-    title: "Java",
-    image: "../images/java.png",
-  },
-  {
-    title: "Kotlin",
-    image: "../images/kotlin.png",
-    link: "https://kotlinlang.org/"
+    image: "../images/chakra.png"
   },
   {
     title: "Windows",
@@ -62,113 +44,43 @@ const programmingData = [
   },
 ]
 
-export const Skills = ({ image }) => {
-  const orientation = useBreakpointValue({ base: 'horizontal', md: 'vertical' })
-  const [orient, setOrient] = useState('vertical')
-
-  useEffect(() => {
-    setOrient(orientation)
-  }, [orientation])
-
-  return (  
-    <Box id="skills" minH="1000px" bgImg={image} bgSize="cover">
-      <Box h="1000px" bgColor="rgba(0,0,0,0.7)">
-        <Container maxW="container.xl" color="white" py={36}> 
-          <VStack align="center">
-            <Heading size="2xl">Skills</Heading>
-            <Text fontSize="lg" fontWeight="bold" color="blue.200" pb={12}>This is the list of all of my technical skills in my chosen field</Text>
-            <Tabs 
-              variant="unstyled"
-              orientation={orient}>
-              <TabList minW="200px" overflow="auto" mr={12} mb={12}>
-                {
-                  tabItems.map((tabItem, tabKey) => (
-                    <Tab
-                      key={tabKey}
-                      fontSize="lg"
-                      fontWeight="bold"
-                      clipPath={{ base: '', md: 'polygon(5% 0%, 100% 0%, 100% 80%, 95% 100%, 5% 100%, 0% 50%)' }}
-                      justifyContent="center"
-                      _selected={{ bgGradient: 'linear(to-r, #3182CE, #00B5D8)', }}
-                      _focus={{ borderColor: 'blue.500' }}>
-                      {tabItem}
-                    </Tab>
-                  ))
-                }
-              </TabList>
-              <TabPanels>
-                <TabPanel px={{ base: 0, lg: 24 }} py={0}>
-                  <Bounce duration={2000}>
-                    <VStack spacing={2} align="start">
-                      <Text fontSize="xl" fontWeight="bold" color="blue.300">Web Development</Text>
-                      <Text fontSize="lg" color="white" pb={4}>Basic Fundamentals</Text>
-                      <HStack spacing={12} pb={4}>
-                        {
-                          programmingData.slice(0, 3).map((data, dataKey) =>(
-                            <VStack align="center" spacing={2} key={dataKey}>
-                              <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
-                              <Text color="white">{data.title}</Text>
-                            </VStack>
-                          ))
-                        }
-                      </HStack>
-                      <Text fontSize="lg" color="white" pb={4}>Frameworks</Text>
-                      <HStack spacing={12} pb={4}>
-                        {
-                          programmingData.slice(3, 6).map((data, dataKey) =>(
-                            <VStack align="center" spacing={2} key={dataKey}>
-                              <Box as="a" target="_blank" href={data.link}>
-                                <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
-                              </Box>
-                              <Text color="white">{data.title}</Text>
-                            </VStack>
-                          ))
-                        }
-                      </HStack>
-                      <Text fontSize="xl" fontWeight="bold" color="blue.300">Mobile Development</Text>
-                      <Text fontSize="lg" color="white" pb={4}>Android</Text>
-                      <HStack spacing={12} pb={4}>
-                        {
-                          programmingData.slice(6, 8).map((data, dataKey) =>(
-                            <VStack align="center" spacing={2} key={dataKey}>
-                              {
-                                data.link ?
-                                  <Box as="a" target="_blank" href={data.link}>
-                                    <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
-                                  </Box> :
-                                  <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
-                              }
-                              <Text color="white">{data.title}</Text>
-                            </VStack>
-                          ))
-                        }
-                      </HStack>
-                    </VStack>
-                  </Bounce>
-                </TabPanel>
-                <TabPanel px={{base: 0, lg: 24 }} py={0}>
-                  <Bounce duration={2000}>
-                    <VStack spacing={2} align="start">
-                      <Text fontSize="xl" fontWeight="bold" color="blue.300">Operating Systems</Text>
-                      <Text fontSize="lg" color="white" pb={6}>Basic Knowledge</Text>
-                    </VStack>
-                    <HStack spacing={12}>
-                      {
-                        programmingData.slice(8, 11).map((data, dataKey) =>(
-                          <VStack align="center" spacing={2} key={dataKey}>
-                            <Image src={data.image} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} alt={data.title} />
-                            <Text color="white">{data.title}</Text>
-                          </VStack>
-                        ))
-                      }
-                    </HStack>   
-                  </Bounce>
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
+export const Skills = ({ }) => (
+  <Box py={40} h="full" bg="blue.500">
+    <Container maxW="container.xl" color="white" py={36} id="skills"> 
+      <Stack direction={{ base: 'column', lg: 'row' }} align="start" spacing={32}>
+        <VStack align="start" spacing={8}>
+          <Heading size="3xl">Skills</Heading>
+          <Text fontSize="xl" w={{ base: 'auto', lg: '500px' }}>My specialization is Frontend Web Development using ReactJS, Chakra UI, and NextJS</Text>
+        </VStack>
+        <VStack align="start" spacing={16}>
+          <VStack align="start" spacing={8}>
+            <Heading size="lg">Operating Systems</Heading>
+            <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={12}>
+              {
+                skillsData.slice(6,9).map((skill, skillKey) => (
+                  <VStack align="center" spacing={2} key={skillKey}>
+                    <Image src={skill.image} boxSize="70px" _hover={{ transform: 'scale(1.1)' }} alt={skill.title} />
+                    <Text fontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
+                  </VStack>
+                ))
+              }
+            </Grid>
           </VStack>
-        </Container>
-      </Box>
-    </Box>
-  )
-}
+          <VStack align="start" spacing={8}>
+            <Heading size="lg">Web Development</Heading>
+            <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={12}>
+              {
+                skillsData.slice(0,6).map((skill, skillKey) => (
+                  <VStack align="center" spacing={2} key={skillKey}>
+                    <Image src={skill.image} boxSize="70px" _hover={{ transform: 'scale(1.1)' }} alt={skill.title} />
+                    <Text ontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
+                  </VStack>
+                ))
+              }
+            </Grid>
+          </VStack>
+        </VStack>
+      </Stack>
+    </Container>
+  </Box>
+)

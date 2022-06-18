@@ -2,9 +2,9 @@ import { Box, HStack, Text, Spacer, Container, Stack, IconButton } from "@chakra
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 export const Footer = ({ }) => (
-  <Box pt={16} pb={4}>
+  <Box py={4}>
     <Container maxW="container.xl">
-      <Stack direction={{ base: 'column', md: 'row' }} color="white">
+      <Stack direction={{ base: 'column', md: 'row' }}>
         <HStack spacing={1} fontWeight="bold">
           <Text>Powered by</Text>
           <Text as="a" href="https://vercel.com/" target="_blank" color="blue.500" _hover={{ transform: 'scale(1.1)' }}>Vercel</Text>
@@ -37,7 +37,7 @@ export const Footer = ({ }) => (
         <Spacer />
         <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>May 28, 2022</Text>
+          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>June 18, 2022</Text>
         </HStack>
       </Stack>
     </Container>

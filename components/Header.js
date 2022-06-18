@@ -6,17 +6,12 @@ import {
 import { MobileDrawer } from "./Drawer"
 import Link from "next/link"
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { IoSchool, IoPersonCircle, IoSettings } from 'react-icons/io5'
+import { IoSchool, IoSettings } from 'react-icons/io5'
 import { MdOutlineWork } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
 
 const links = [
-  {
-    title: 'About',
-    href: '#about',
-    icon: <IoPersonCircle size={24} />
-  },
   {
     title: 'Education',
     href: '#education',
@@ -31,11 +26,6 @@ const links = [
     title: 'Skills',
     href: '#skills',
     icon: <IoSettings size={24} />  
-  },
-  {
-    title: 'Projects',
-    href: '#projects',
-    icon: <AiFillProject size={24} />    
   }
 ]
 
@@ -43,19 +33,21 @@ export const Header = ({ title, image }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [chosenLink, setChosenLink] = useState('')
 
-  console.log(chosenLink)
-
   return (
-    <Box pt={6} w="full" pos="fixed" zIndex={1000}>
+    <Box pt={6} w="full" zIndex={1000} pos="relative">
       <Container maxW="container.xl" color="white">
         <HStack justify="space-between" display={{ base: 'flex', md: 'none' }}>
           <Link href="/" passHref>
-            <Image h="50px" src={image} alt="Ian Sui Icon" />
+            <HStack spacing={4}>
+              <Image h="50px" src={image} alt="Ian Sui Icon" />
+              <Heading size="lg" color="black">Ian Sui</Heading>
+            </HStack>
           </Link>          
           <IconButton 
             variant="ghost"
             borderRadius="xs"
             size="md"
+            color="black"
             _focus={{ borderColor: 'primary.500' }}
             icon={<GiHamburgerMenu fontSize={24} />}
             onClick={onOpen}
@@ -65,15 +57,18 @@ export const Header = ({ title, image }) => {
           <VStack h="full" w="full" align="start">
             <HStack w="full" justify="space-between" spacing={2} py={6} color="white">
               <Link href="/" passHref>
-                <Image h="50px" src={image} alt="Ian Sui Icon" />
-              </Link>  
+                <HStack spacing={4}>
+                  <Image h="50px" src={image} alt="Ian Sui Icon" />
+                  <Heading size="lg" color="blue.500">Ian Sui</Heading>
+                </HStack>
+              </Link>      
               <IconButton
                 variant="outline"
                 borderRadius="xs"
                 size="sm"
                 borderColor="blue.500"
                 borderWidth={1}
-                _focus={{ borderColor: 'blue.500', bgColor: 'black' }}
+                _focus={{ borderColor: 'blue.500' }}
                 icon={<AiOutlineClose fontSize={16} />}
                 onClick={onClose} />
             </HStack>
@@ -82,14 +77,14 @@ export const Header = ({ title, image }) => {
                 links.map((link, linkKey) => (
                   <HStack key={linkKey} w="full" justify="space-between">
                     <Link href={link.href} passHref>
-                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} 
+                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'black'} 
                       onClick={() => {
                         onClose()
                         setChosenLink(link.title)
                       }}>{link.title}</Button>
                     </Link>
                     <Link href={link.href} passHref>
-                      <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : 'white'} icon={link.icon} 
+                      <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : 'black'} icon={link.icon} 
                         onClick={() => {
                           onClose()
                           setChosenLink(link.title)
@@ -128,13 +123,16 @@ export const Header = ({ title, image }) => {
         </MobileDrawer>
         <HStack spacing={12} display={{ base: 'none', md: 'flex' }}>
           <Link href="/" passHref>
-            <Image h="50px" src={image} alt="Ian Sui Icon" />
-          </Link>
+            <HStack spacing={4}>
+              <Image h="50px" src={image} alt="Ian Sui Icon" />
+              <Heading size="lg" color="blue.500">Ian Sui</Heading>
+            </HStack>
+          </Link>      
           <Spacer />
           {
             links.map((link, linkKey) => (
               <Link key={linkKey} href={link.href} passHref>
-                <Button _focus={{ borderColor: 'white' }} variant="link" fontSize="lg" _hover={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'white'} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : 'black'} _focus={{ borderColor: 'white' }} _hover={{ color: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
               </Link>  
             ))  
           }
