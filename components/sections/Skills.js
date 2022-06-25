@@ -1,11 +1,41 @@
 import { 
-  Box, Container, VStack, Heading, Text, Grid, Stack, Image
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { Bounce, Flip } from "react-reveal";
+  Box, Container, VStack, Heading, Text, Grid, Image, useColorModeValue as mode
+} from "@chakra-ui/react"
+import { MotionBox } from "../Motion";
+
+const item = {
+  hidden: { y: 0, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.3
+    }
+  }
+}
 
 const skillsData = [
+  {
+    title: "ReactJS",
+    image: "../images/react.png"
+  },
+  {
+    title: "NextJS",
+    image: "../images/next.png",
+  },
+  {
+    title: "Chakra UI",
+    image: "../images/chakra.png"
+  },
   {
     title: "HTML",
     image: "../images/html.png"
@@ -19,16 +49,28 @@ const skillsData = [
     image: "../images/javascript.png"
   },
   {
-    title: "ReactJS",
-    image: "../images/react.png"
+    title: "Node",
+    image: "../images/node.png"
   },
   {
-    title: "NextJS",
-    image: "../images/next.png",
+    title: "MySQL",
+    image: "../images/mysql.png"
   },
   {
-    title: "Chakra UI",
-    image: "../images/chakra.png"
+    title: "MongoDB",
+    image: "../images/mongo.png"
+  },
+  {
+    title: "GraphQL",
+    image: "../images/graphql.png"
+  },
+  {
+    title: "Java",
+    image: "../images/java.png"
+  },
+  {
+    title: "Kotlin",
+    image: "../images/kotlin.png"
   },
   {
     title: "Windows",
@@ -45,42 +87,55 @@ const skillsData = [
 ]
 
 export const Skills = ({ }) => (
-  <Box py={40} h="full" bg="blue.500">
-    <Container maxW="container.xl" color="white" py={36} id="skills"> 
-      <Stack direction={{ base: 'column', lg: 'row' }} align="start" spacing={32}>
-        <VStack align="start" spacing={8}>
-          <Heading size="3xl">Skills</Heading>
-          <Text fontSize="xl" w={{ base: 'auto', lg: '500px' }}>My specialization is Frontend Web Development using ReactJS, Chakra UI, and NextJS</Text>
-        </VStack>
-        <VStack align="start" spacing={16}>
-          <VStack align="start" spacing={8}>
-            <Heading size="lg">Operating Systems</Heading>
-            <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={12}>
-              {
-                skillsData.slice(6,9).map((skill, skillKey) => (
-                  <VStack align="center" spacing={2} key={skillKey}>
-                    <Image src={skill.image} boxSize="70px" _hover={{ transform: 'scale(1.1)' }} alt={skill.title} />
-                    <Text fontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
+  <Box py={40} h="full" bg={mode('white', 'black')}>
+    <Container maxW="container.xl" py={4} id="skills"> 
+      <MotionBox
+        variants={container}
+        initial="hidden"
+        animate="visible">
+        <VStack align="center" spacing={8}>
+          <Heading size="2xl">Skills</Heading>
+          <Heading size="lg">Featured Skills</Heading>
+          <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12} pb={10}>
+            {
+              skillsData.slice(0,3).map((skill, skillKey) => (
+                <MotionBox variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                    <Image src={skill.image} boxSize="70px" alt={skill.title} />
+                    <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
                   </VStack>
-                ))
-              }
-            </Grid>
-          </VStack>
-          <VStack align="start" spacing={8}>
-            <Heading size="lg">Web Development</Heading>
-            <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', xl: 'repeat(4, 1fr)' }} gap={12}>
-              {
-                skillsData.slice(0,6).map((skill, skillKey) => (
-                  <VStack align="center" spacing={2} key={skillKey}>
-                    <Image src={skill.image} boxSize="70px" _hover={{ transform: 'scale(1.1)' }} alt={skill.title} />
-                    <Text fontSize="xl" fontWeight="bold" color="white">{skill.title}</Text>
+                </MotionBox>  
+              ))
+            }
+          </Grid>
+          <Heading size="lg">Other Skills</Heading>
+          <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
+            {
+              skillsData.slice(3,12).map((skill, skillKey) => (
+                <MotionBox variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                    <Image src={skill.image} boxSize="70px"  alt={skill.title} />
+                    <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
                   </VStack>
-                ))
-              }
-            </Grid>
-          </VStack>
+                </MotionBox>  
+              ))
+            }
+          </Grid>
+          <Heading size="lg">Operating Systems</Heading>
+          <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12}>
+            {
+              skillsData.slice(12,16).map((skill, skillKey) => (
+                <MotionBox variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                    <Image src={skill.image} boxSize="70px"  alt={skill.title} />
+                    <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
+                  </VStack>
+                </MotionBox>  
+              ))
+            }
+          </Grid>
         </VStack>
-      </Stack>
+      </MotionBox>  
     </Container>
   </Box>
 )

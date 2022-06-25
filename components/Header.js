@@ -1,48 +1,49 @@
 import { useState } from 'react'
 import { 
   Box, Button, Container, Heading, HStack, IconButton, 
-  Spacer, useDisclosure, VStack, Image
+  Spacer, useDisclosure, VStack, Image, useColorModeValue as mode, useColorMode, Icon
 } from "@chakra-ui/react"
 import { MobileDrawer } from "./Drawer"
 import Link from "next/link"
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { IoSchool, IoSettings } from 'react-icons/io5'
+import { IoSettings, IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
 import { MdOutlineWork } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
 
 const links = [
   {
-    title: 'Education',
-    href: '#education',
-    icon: <IoSchool size={24} />
-  },
-  {
     title: 'Experience',
     href: '#experience',
-    icon: <MdOutlineWork size={24} />  
+    icon: MdOutlineWork
   },
   {
     title: 'Skills',
     href: '#skills',
-    icon: <IoSettings size={24} />  
+    icon: IoSettings 
+  },
+  {
+    title: 'Projects',
+    href: '#projects',
+    icon: AiFillProject
   }
 ]
 
 export const Header = ({ title, image }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [chosenLink, setChosenLink] = useState('')
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Box pt={6} w="full" zIndex={1000} pos="relative">
+    <Box w="full" zIndex={1000} bg={mode('rgba(255,255,255,0.7)', 'rgba(0,0,0,0.7)')} pos="fixed" py={6}>
       <Container maxW="container.xl" color="white">
-        <HStack justify="space-between" display={{ base: 'flex', md: 'none' }}>
+        <HStack justify="space-between" display={{ base: 'flex', md: 'none' }} spacing={2}>
           <Link href="/" passHref>
             <HStack spacing={4}>
               <Image h="50px" src={image} alt="Ian Sui Icon" />
-              <Heading size="lg" color="black">Ian Sui</Heading>
+              <Heading size="lg" color="blue.500">Ian Sui</Heading>
             </HStack>
-          </Link>          
+          </Link>        
           <IconButton 
             variant="ghost"
             borderRadius="xs"
@@ -55,36 +56,50 @@ export const Header = ({ title, image }) => {
         </HStack>
         <MobileDrawer isOpen={isOpen} onClose={onClose}>
           <VStack h="full" w="full" align="start">
-            <HStack w="full" justify="space-between" spacing={2} py={6} color="white">
+            <HStack w="full" justify="space-between" py={10} color="white">
               <Link href="/" passHref>
                 <HStack spacing={4}>
                   <Image h="50px" src={image} alt="Ian Sui Icon" />
                   <Heading size="lg" color="blue.500">Ian Sui</Heading>
                 </HStack>
-              </Link>      
-              <IconButton
-                variant="outline"
-                borderRadius="xs"
-                size="sm"
-                borderColor="blue.500"
-                borderWidth={1}
-                _focus={{ borderColor: 'blue.500' }}
-                icon={<AiOutlineClose fontSize={16} />}
-                onClick={onClose} />
+              </Link>   
+              <HStack spacing={2}>
+                <IconButton
+                  variant="outline"
+                  borderRadius="xs"
+                  size="sm"
+                  borderColor="blue.500"
+                  borderWidth={1}
+                  _active={{ bgColor: 'blue.500' }}
+                  _focus={{ borderColor: 'blue.500' }} 
+                  onClick={toggleColorMode}
+                  icon={colorMode == 'light' ? <IoMoonOutline color={mode('black', 'white')} /> : <IoSunnyOutline color="white" />}
+                />     
+                <IconButton
+                  variant="outline"
+                  borderRadius="xs"
+                  size="sm"
+                  borderColor="blue.500"
+                  borderWidth={1}
+                  _active={{ bgColor: 'blue.500' }}
+                  _focus={{ borderColor: 'blue.500' }} 
+                  icon={<AiOutlineClose color={mode('black', 'white')} fontSize={16} />}
+                  onClick={onClose} />
+              </HStack>
             </HStack>
-            <VStack align="start" w="full" spacing={4} color="white">
+            <VStack align="start" w="full" spacing={4}>
               {
                 links.map((link, linkKey) => (
                   <HStack key={linkKey} w="full" justify="space-between">
                     <Link href={link.href} passHref>
-                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : 'black'} 
+                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} 
                       onClick={() => {
                         onClose()
                         setChosenLink(link.title)
                       }}>{link.title}</Button>
                     </Link>
                     <Link href={link.href} passHref>
-                      <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : 'black'} icon={link.icon} 
+                      <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} icon={<Icon as={link.icon} />} 
                         onClick={() => {
                           onClose()
                           setChosenLink(link.title)
@@ -132,10 +147,20 @@ export const Header = ({ title, image }) => {
           {
             links.map((link, linkKey) => (
               <Link key={linkKey} href={link.href} passHref>
-                <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : 'black'} _focus={{ borderColor: 'white' }} _hover={{ color: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _focus={{ borderColor: 'blue.500' }} borderColor="blue.500" borderBottomWidth={chosenLink == link.title ? 4 : 0} _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
               </Link>  
             ))  
           }
+          <IconButton
+            size="sm"
+            rounded="full"
+            bg="blue.500"
+            _hover={{ bgColor: 'blue.200' }}
+            _active={{ bgColor: 'blue.200' }}
+            _focus={{ borderColor: 'white' }}
+            onClick={toggleColorMode}
+            icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
+          />
         </HStack>
       </Container>
     </Box>
