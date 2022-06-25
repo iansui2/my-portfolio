@@ -46,8 +46,7 @@ export const Contact = ({ }) => {
     const requestOptions = {
       method: "POST",
       headers: { 
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://express-api-zeta.vercel.app/"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         ...values
@@ -65,10 +64,6 @@ export const Contact = ({ }) => {
   const handleChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value })
   }
-
-  useEffect(() => {
-    console.log(values)
-  }, [values])
 
   return (
     <Box id="contact" py={24}>
