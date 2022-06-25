@@ -46,7 +46,9 @@ export const Contact = ({ }) => {
     const requestOptions = {
       method: "POST",
       headers: { 
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS"
       },
       body: JSON.stringify({
         ...values
