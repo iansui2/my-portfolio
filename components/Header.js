@@ -14,18 +14,19 @@ import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
 const links = [
   {
     title: 'Experience',
-    href: '#experience',
-    icon: MdOutlineWork
+    href: '#experience'
   },
   {
     title: 'Skills',
-    href: '#skills',
-    icon: IoSettings 
+    href: '#skills'
   },
   {
     title: 'Projects',
-    href: '#projects',
-    icon: AiFillProject
+    href: '#projects'
+  },
+  {
+    title: 'Contact Me',
+    href: '#contact'
   }
 ]
 
@@ -87,25 +88,12 @@ export const Header = ({ title, image }) => {
                   onClick={onClose} />
               </HStack>
             </HStack>
-            <VStack align="start" w="full" spacing={4}>
+            <VStack align="start" w="full" spacing={10}>
               {
                 links.map((link, linkKey) => (
-                  <HStack key={linkKey} w="full" justify="space-between">
-                    <Link href={link.href} passHref>
-                      <Button _focus={{ borderColor: 'white' }} variant="ghost" fontSize="lg" _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} 
-                      onClick={() => {
-                        onClose()
-                        setChosenLink(link.title)
-                      }}>{link.title}</Button>
-                    </Link>
-                    <Link href={link.href} passHref>
-                      <IconButton variant="unstyled" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _hover={{ color: 'blue.500' }} _active={{ color: 'blue.500' }} icon={<Icon as={link.icon} />} 
-                        onClick={() => {
-                          onClose()
-                          setChosenLink(link.title)
-                        }} />
-                    </Link>
-                  </HStack>  
+                  <Link key={linkKey} href={link.href} passHref>
+                    <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _focus={{ borderColor: 'blue.500' }} borderColor="blue.500" borderBottomWidth={chosenLink == link.title ? 4 : 0} _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                  </Link>
                 ))  
               }
             </VStack>
