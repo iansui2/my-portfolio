@@ -99,8 +99,8 @@ export const Skills = ({ }) => (
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12} pb={10}>
             {
               skillsData.slice(0,3).map((skill, skillKey) => (
-                <MotionBox variants={item}> 
-                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                <MotionBox key={skillKey} variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px" alt={skill.title} />
                     <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
                   </VStack>
@@ -112,8 +112,8 @@ export const Skills = ({ }) => (
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
             {
               skillsData.slice(3,12).map((skill, skillKey) => (
-                <MotionBox variants={item}> 
-                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                <MotionBox key={skillKey} variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />
                     <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
                   </VStack>
@@ -125,8 +125,8 @@ export const Skills = ({ }) => (
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12}>
             {
               skillsData.slice(12,16).map((skill, skillKey) => (
-                <MotionBox variants={item}> 
-                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }} key={skillKey}>
+                <MotionBox key={skillKey} variants={item}> 
+                  <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />
                     <Text fontSize="xl" fontWeight="bold">{skill.title}</Text>
                   </VStack>

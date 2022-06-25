@@ -52,8 +52,8 @@ export const Experience = ({ }) => (
         <Heading size="2xl">Work Experience</Heading>
         {
           experienceData.map((data, dataKey) => (
-            <Slide left duration={1000}>
-              <Stack direction={{ base: 'column', md: 'row' }} key={dataKey} align={{ base: 'start', md: 'center' }} spacing={12}>
+            <Slide key={dataKey} left duration={1000}>
+              <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
                 { data.logo ? <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} /> : <Box boxSize={{ base: '0px', md: '150px' }} />}
                 <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
                   <Heading size="lg" textAlign="center">{data.title}</Heading>
@@ -67,7 +67,7 @@ export const Experience = ({ }) => (
                   <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
                   <HStack spacing={2}>
                   {
-                    data.technologies.map((tech, techKey) => <Image key={techKey} src={tech} boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />)
+                    data.technologies.map((tech, techKey) => <Image key={techKey} src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />)
                   }
                   </HStack>
                 </VStack>
