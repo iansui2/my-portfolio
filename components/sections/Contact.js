@@ -56,6 +56,7 @@ export const Contact = ({ }) => {
     }
     fetch("https://express-api-zeta.vercel.app/api/insertUser", requestOptions)
       .then((response) => {
+        console.log(response.json())
         return response.json()
       })
       .then((data) => {
