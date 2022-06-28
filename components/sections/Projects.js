@@ -1,4 +1,5 @@
-import { Box, Container, VStack, Heading, Text, HStack, Image, Button, Stack, Center, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Box, Container, VStack, Heading, Text, HStack, Image, Button, Stack, Center, UnorderedList, ListItem, useBreakpointValue } from "@chakra-ui/react";
+import { useState } from "react";
 import { Slide } from "react-reveal";
 
 const projectsData = [
@@ -10,6 +11,7 @@ const projectsData = [
       "You can modify and remove food products"
     ],
     image: "../images/foodery.png",
+    smallImage: "../images/foodery-iphone.png",
     href: "https://foodery-roan.vercel.app/"
   },
   {
@@ -32,7 +34,6 @@ const projectsData = [
       "You can add a category for a note"
     ],
     image: "../images/my-notes.png",
-    smallImage: "../images/foodery-iphone.png",
     file: "../files/my-notes.apk"
   }
 ]
@@ -42,24 +43,28 @@ export const Projects = ({ }) => (
     <Container maxW="container.lg" centerContent>
       <VStack align="center">
         <Heading size="2xl" mb={12}>Projects</Heading>
-        <VStack align={{ base: 'center', md: 'start' }} spacing={12} pb={16}>
+        <VStack align={{ base: 'center', md: 'start' }} spacing={20} pb={16}>
           <Slide left duration={1000}>
             {
-              projectsData.map((data, dataKey) => (
-                <VStack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
-                  <Image src={data.image} h="500px" alt={data.title} />
-                  <VStack align={{ base: 'center', md: 'start' }}>
-                    <Heading>{data.title}</Heading>
-                    <Text pb={4} fontSize="lg">{data.description}</Text>
-                    <UnorderedList pl={6} pb={3}>
-                      {
-                        data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
-                      }
-                    </UnorderedList>
-                    <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
-                  </VStack>
-                </VStack>  
-              ))
+              projectsData.map((data, dataKey) => {
+                const imageData = useBreakpointValue({ base: data.smallImage ? data.smallImage : data.image, md: data.image })
+
+                return (
+                  <VStack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
+                    <Image src={imageData} h="500px" alt={data.title} />
+                    <VStack align="center">
+                      <Heading>{data.title}</Heading>
+                      <Text pb={4} fontSize="lg">{data.description}</Text>
+                      <UnorderedList pl={6} pb={3}>
+                        {
+                          data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                        }
+                      </UnorderedList>
+                      <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
+                    </VStack>
+                  </VStack>  
+                )
+              })
             }
           </Slide>
         </VStack>

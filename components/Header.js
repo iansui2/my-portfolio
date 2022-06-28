@@ -92,7 +92,20 @@ export const Header = ({ title, image }) => {
               {
                 links.map((link, linkKey) => (
                   <Link key={linkKey} href={link.href} passHref>
-                    <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _focus={{ borderColor: 'blue.500' }} borderColor="blue.500" borderBottomWidth={chosenLink == link.title ? 4 : 0} _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                    <Button 
+                      variant="link" 
+                      fontSize="lg" 
+                      color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} 
+                      _focus={{ borderColor: 'blue.500' }} 
+                      borderColor="blue.500" 
+                      borderBottomWidth={chosenLink == link.title ? 4 : 0} 
+                      _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} 
+                      onClick={() => {
+                        onClose()
+                        setChosenLink(link.title)
+                      }}>
+                        {link.title}
+                    </Button>
                   </Link>
                 ))  
               }
@@ -128,7 +141,7 @@ export const Header = ({ title, image }) => {
           <Link href="/" passHref>
             <HStack spacing={4}>
               <Image h="50px" src={image} alt="Ian Sui Icon" />
-              <Heading size="lg" color="blue.500">Ian Sui</Heading>
+              <Heading size="lg" color="blue.500" w="150px">Ian Sui</Heading>
             </HStack>
           </Link>      
           <Spacer />
