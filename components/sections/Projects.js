@@ -15,6 +15,17 @@ const projectsData = [
     href: "https://foodery-roan.vercel.app/"
   },
   {
+    title: "Mapsify",
+    description: "An app that lets you explore the globe through the use of Google Maps Api",
+    listItems: [
+      "You can find many places using google maps",
+      "You can use all of the functionalities of google maps"
+    ],
+    image: "../images/mapsify.png",
+    smallImage: "../images/mapsify-iphone.png",
+    href: "https://mapsify.vercel.app/"
+  },
+  {
     title: "Earthquake Report",
     description: "An app that lets you view the earthquakes that happened around the world",
     listItems: [
