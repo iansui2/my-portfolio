@@ -44,6 +44,7 @@ export const Contact = ({ }) => {
 
   const addUser = () => {
     const requestOptions = {
+      mode: 'no-cors',
       method: 'POST',
       headers: { 
         "Content-Type": "application/json",
