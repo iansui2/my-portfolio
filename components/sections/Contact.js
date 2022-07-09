@@ -43,12 +43,21 @@ export const Contact = ({ }) => {
   const [values, setValues] = useState(itemState)
 
   const addUser = () => {
+    let headers = new Headers()
+
+    headers.append('Content-Type', 'application/json')
+    headers.append('Accept', 'application/json')
+    headers.append('Origin', 'https://express-api-zeta.vercel.app/api/insertUser')
+
     const requestOptions = {
-      method: "POST",
+      mode: 'cors',
+      method: 'POST',
+      headers: headers,
       body: JSON.stringify({
         ...values
       }),
     }
+
     fetch("https://express-api-zeta.vercel.app/api/insertUser", requestOptions)
       .then((response) => {
         return response.json()
