@@ -61,6 +61,9 @@ export const Contact = ({ }) => {
       .then((data) => {
         console.log(data)
       })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   const handleChange = ({ target: { name, value } }) => {
