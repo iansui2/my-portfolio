@@ -116,10 +116,10 @@ export const Header = ({ title, image }) => {
               }
             </VStack>
             <Spacer />
-            <HStack pb={6}>
+            <HStack pb={4}>
               <IconButton 
                 as="a" 
-                href="https://www.linkedin.com/in/ronan-ian-d-sui-913100134/" 
+                href={process.env.REACT_APP_LINKEDIN}
                 target="_blank"
                 _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                 _active={{ bgColor: 'blue.200' }}
@@ -130,7 +130,7 @@ export const Header = ({ title, image }) => {
                 icon={<BsLinkedin fontSize={16} color="white" />} />
               <IconButton
                 as="a" 
-                href="https://github.com/iansui2" 
+                href={process.env.REACT_APP_GITHUB} 
                 target="_blank"
                 _hover={{ bgColor: 'gray.900', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                 _active={{ bgColor: 'gray.900' }}

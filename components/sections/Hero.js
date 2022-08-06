@@ -36,13 +36,13 @@ export const Hero = () => (
               <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="2xl">I Have Frontend Web Development Skills and Experience</Heading>
             </MotionBox>  
             <MotionBox variants={item}>
-              <Text fontWeight="semibold" fontSize="lg" w={{ base: 'auto', lg: '500px' }} pb={4}>Hi, I&rsquo;m Ian Sui and I&rsquo;m a Frontend Developer and My Current Tech Stack is ReactJS, NextJS and Chakra UI.</Text>
+              <Text fontWeight="semibold" fontSize="lg" w={{ base: 'auto', lg: '500px' }} pb={4}>Hi, I&rsquo;m Ian Sui and I&rsquo;m a Web Developer and My Current Tech Stack is ReactJS, HTML, CSS, Material UI and Sass.</Text>
             </MotionBox>  
             <MotionBox variants={item}>
               <Stack direction={{ base: 'column', lg: 'row' }} spacing={4} pb={8}>
                 <Button 
                   as="a" 
-                  href="https://www.linkedin.com/in/ronan-ian-d-sui-913100134/" 
+                  href={process.env.REACT_APP_LINKEDIN}
                   target="_blank"
                   _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                   _active={{ bgColor: 'blue.200' }}
@@ -56,7 +56,7 @@ export const Hero = () => (
                 </Button>
                 <Button 
                   as="a" 
-                  href="../files/portfolio.pdf"
+                  href={`../${process.env.REACT_APP_PORTFOLIO}`}
                   target="_blank"
                   _hover={{ bgColor: mode('gray.900', 'gray.300'), transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                   _active={{ bgColor: mode('gray.900', 'gray.300') }}
@@ -75,7 +75,7 @@ export const Hero = () => (
                 <Text fontWeight="semibold">Check out my projects on</Text>
                 <IconButton
                   as="a" 
-                  href="https://github.com/iansui2" 
+                  href={process.env.REACT_APP_GITHUB} 
                   target="_blank"
                   _hover={{ bgColor: mode('gray.900', 'gray.300'), transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                   _active={{ bgColor: mode('gray.900', 'gray.300') }}

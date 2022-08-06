@@ -7,13 +7,13 @@ export const Footer = ({ }) => (
       <Stack direction={{ base: 'column', md: 'row' }} w="full">
         <HStack spacing={1} fontWeight="bold">
           <Text>Powered by</Text>
-          <Text as="a" href="https://vercel.com/" target="_blank" color="blue.500" _hover={{ transform: 'scale(1.1)' }}>Vercel</Text>
+          <Text as="a" href={process.env.REACT_APP_VERCEL} target="_blank" color="blue.500" _hover={{ transform: 'scale(1.1)' }}>Vercel</Text>
         </HStack>
         <Spacer />
         <HStack>
           <IconButton 
             as="a" 
-            href="https://www.linkedin.com/in/ronan-ian-d-sui-913100134/" 
+            href={process.env.REACT_APP_LINKEDIN}
             target="_blank"
             _hover={{ bgColor: 'blue.200' }}
             _active={{ bgColor: 'blue.200' }}
@@ -24,7 +24,7 @@ export const Footer = ({ }) => (
             icon={<BsLinkedin fontSize={16} color="white" />} />
           <IconButton
             as="a" 
-            href="https://github.com/iansui2" 
+            href={process.env.REACT_APP_GITHUB}
             target="_blank"
             _hover={{ bgColor: 'gray.900' }}
             _active={{ bgColor: 'gray.900' }}
@@ -37,7 +37,7 @@ export const Footer = ({ }) => (
         <Spacer />
         <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>July 21, 2022</Text>
+          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>August 6, 2022</Text>
         </HStack>
       </Stack>
     </Container>

@@ -1,9 +1,25 @@
 import { Box, Heading, Text, VStack, Container, Stack, Image, HStack, List, ListItem, UnorderedList } from "@chakra-ui/react"
-import { Slide } from "react-reveal"
+import Flash from "react-reveal/Flash"
 
 const experienceData = [
   {
     logo: "../../images/logo-1.png",
+    title: "Web Developer",
+    company: "Sparksoft Solutions",
+    description: [
+      "Developed a system that will greatly help communities and cities in their daily lives"
+    ],
+    technologies: [
+      "../../images/react.png",
+      "../../images/html.png",
+      "../../images/css.png",
+      "../../images/sass.png",
+      "../../images/mui.png",
+    ],
+    timeframe: "July 2022 - Present"
+  },
+  {
+    logo: "../../images/logo-2.png",
     title: "Frontend Developer",
     company: "Appdeture",
     description: [
@@ -14,12 +30,14 @@ const experienceData = [
     technologies: [
       "../../images/react.png",
       "../../images/next.png",
+      "../../images/html.png",
+      "../../images/css.png",
       "../../images/chakra.png"
     ],
-    timeframe: "January 2022 - Present"
+    timeframe: "January 2022 - July 2022"
   },
   {
-    logo: "../../images/logo-2.jpeg",
+    logo: "../../images/logo-3.jpeg",
     title: "Software Developer",
     company: "Evotech",
     description: [
@@ -32,6 +50,7 @@ const experienceData = [
     timeframe: "May 2021 - June 2021"
   },
   {
+    logo: "../../images/logo-4.png",
     title: "C# Developer",
     company: "BC TECH HQ",
     description: [
@@ -52,9 +71,9 @@ export const Experience = ({ }) => (
         <Heading size="2xl">Work Experience</Heading>
         {
           experienceData.map((data, dataKey) => (
-            <Slide key={dataKey} left duration={1000}>
+            <Flash key={dataKey} left duration={1000}>
               <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
-                { data.logo ? <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} /> : <Box boxSize={{ base: '0px', md: '150px' }} />}
+                <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
                 <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
                   <Heading size="lg" textAlign="center">{data.title}</Heading>
                   <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
@@ -72,7 +91,7 @@ export const Experience = ({ }) => (
                   </HStack>
                 </VStack>
               </Stack>
-            </Slide>
+            </Flash>
           )) 
         }
       </VStack>

@@ -29,14 +29,6 @@ const skillsData = [
     image: "../images/react.png"
   },
   {
-    title: "NextJS",
-    image: "../images/next.png",
-  },
-  {
-    title: "Chakra UI",
-    image: "../images/chakra.png"
-  },
-  {
     title: "HTML",
     image: "../images/html.png"
   },
@@ -47,6 +39,22 @@ const skillsData = [
   {
     title: "Javascript",
     image: "../images/javascript.png"
+  },
+  {
+    title: "Material UI",
+    image: "../images/mui.png",
+  },
+  {
+    title: "Sass",
+    image: "../images/sass.png"
+  },
+  {
+    title: "NextJS",
+    image: "../images/next.png",
+  },
+  {
+    title: "Chakra UI",
+    image: "../images/chakra.png"
   },
   {
     title: "Node",
@@ -98,7 +106,7 @@ export const Skills = ({ }) => (
           <Heading size="lg">Featured Skills</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12} pb={10}>
             {
-              skillsData.slice(0,3).map((skill, skillKey) => (
+              skillsData.slice(0,6).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px" alt={skill.title} />
@@ -111,7 +119,7 @@ export const Skills = ({ }) => (
           <Heading size="lg">Other Skills</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
             {
-              skillsData.slice(3,12).map((skill, skillKey) => (
+              skillsData.slice(6,14).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />
@@ -124,7 +132,7 @@ export const Skills = ({ }) => (
           <Heading size="lg">Operating Systems</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12}>
             {
-              skillsData.slice(12,16).map((skill, skillKey) => (
+              skillsData.slice(14,17).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />

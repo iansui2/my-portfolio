@@ -1,6 +1,5 @@
-import { Box, Container, VStack, Heading, Text, HStack, Image, Button, Stack, Center, UnorderedList, ListItem, useBreakpointValue } from "@chakra-ui/react";
-import { useState } from "react";
-import { Slide } from "react-reveal";
+import { Box, Container, VStack, Heading, Text, Image, Button, UnorderedList, ListItem, useBreakpointValue } from "@chakra-ui/react";
+import Pulse from "react-reveal/Pulse"
 
 const projectsData = [
   {
@@ -12,7 +11,7 @@ const projectsData = [
     ],
     image: "../images/foodery.png",
     smallImage: "../images/foodery-iphone.png",
-    href: "https://foodery-roan.vercel.app/"
+    href: process.env.REACT_APP_FOODERY
   },
   {
     title: "Mapsify",
@@ -23,7 +22,7 @@ const projectsData = [
     ],
     image: "../images/mapsify.png",
     smallImage: "../images/mapsify-iphone.png",
-    href: "https://mapsify.vercel.app/"
+    href: process.env.REACT_APP_MAPSIFY
   },
   {
     title: "Earthquake Report",
@@ -55,29 +54,29 @@ export const Projects = ({ }) => (
       <VStack align="center">
         <Heading size="2xl" mb={12}>Projects</Heading>
         <VStack align={{ base: 'center', md: 'start' }} spacing={20} pb={16}>
-          <Slide left duration={1000}>
             {
               projectsData.map((data, dataKey) => {
                 const imageData = useBreakpointValue({ base: data.smallImage ? data.smallImage : data.image, md: data.image })
 
                 return (
-                  <VStack key={dataKey} direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
-                    <Image src={imageData} h="500px" alt={data.title} _hover={{ transform: 'scale(1.05)', transition: 'all 300ms ease' }} />
-                    <VStack align="center">
-                      <Heading>{data.title}</Heading>
-                      <Text pb={4} fontSize="lg">{data.description}</Text>
-                      <UnorderedList pl={6} pb={3}>
-                        {
-                          data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
-                        }
-                      </UnorderedList>
-                      <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
-                    </VStack>
-                  </VStack>  
+                  <Pulse key={dataKey} duration={1000}>
+                    <VStack direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
+                      <Image src={imageData} h="500px" alt={data.title} _hover={{ transform: 'scale(1.05)', transition: 'all 300ms ease' }} />
+                      <VStack align="center">
+                        <Heading>{data.title}</Heading>
+                        <Text pb={4} fontSize="lg">{data.description}</Text>
+                        <UnorderedList pl={6} pb={3}>
+                          {
+                            data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                          }
+                        </UnorderedList>
+                        <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
+                      </VStack>
+                    </VStack>  
+                  </Pulse>
                 )
               })
             }
-          </Slide>
         </VStack>
       </VStack>
     </Container>
