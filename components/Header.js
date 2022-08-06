@@ -119,7 +119,7 @@ export const Header = ({ title, image }) => {
             <HStack pb={4}>
               <IconButton 
                 as="a" 
-                href={process.env.REACT_APP_LINKEDIN}
+                href="https://www.linkedin.com/in/ronan-ian-d-sui-913100134/"
                 target="_blank"
                 _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
                 _active={{ bgColor: 'blue.200' }}
@@ -130,15 +130,15 @@ export const Header = ({ title, image }) => {
                 icon={<BsLinkedin fontSize={16} color="white" />} />
               <IconButton
                 as="a" 
-                href={process.env.REACT_APP_GITHUB} 
+                href="https://github.com/iansui2"
                 target="_blank"
-                _hover={{ bgColor: 'gray.900', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
-                _active={{ bgColor: 'gray.900' }}
-                _focus={{ borderColor: 'gray.900' }}
-                bgColor="black" 
+                _hover={{ bgColor: mode('gray.900', 'gray.300'), transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+                _active={{ bgColor: mode('gray.900', 'gray.300') }}
+                _focus={{ borderColor: mode('gray.900', 'gray.300') }}
+                bgColor={mode('black', 'white')}
                 size="md"
                 rounded="full"
-                icon={<BsGithub fontSize={16} color="white" />} />
+                icon={<BsGithub fontSize={16} color={mode('white', 'black')} />} />
             </HStack>
           </VStack>  
         </MobileDrawer>
