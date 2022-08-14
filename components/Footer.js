@@ -1,4 +1,4 @@
-import { Box, HStack, Text, Spacer, Container, Stack, IconButton } from "@chakra-ui/react";
+import { Box, HStack, Text, Spacer, Container, Stack, IconButton, useColorModeValue as mode } from "@chakra-ui/react";
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 export const Footer = ({ }) => (
@@ -15,7 +15,7 @@ export const Footer = ({ }) => (
             as="a" 
             href={process.env.REACT_APP_LINKEDIN}
             target="_blank"
-            _hover={{ bgColor: 'blue.200' }}
+            _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
             _active={{ bgColor: 'blue.200' }}
             _focus={{ borderColor: 'blue.500' }} 
             bgColor="blue.500" 
@@ -24,20 +24,20 @@ export const Footer = ({ }) => (
             icon={<BsLinkedin fontSize={16} color="white" />} />
           <IconButton
             as="a" 
-            href={process.env.REACT_APP_GITHUB}
+            href={process.env.REACT_APP_GITHUB} 
             target="_blank"
-            _hover={{ bgColor: 'gray.900' }}
-            _active={{ bgColor: 'gray.900' }}
-            _focus={{ borderColor: 'gray.900' }}
-            bgColor="black" 
+            _hover={{ bgColor: mode('gray.900', 'gray.300'), transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+            _active={{ bgColor: mode('gray.900', 'gray.300') }}
+            _focus={{ borderColor: mode('gray.900', 'gray.300') }}
+            bgColor={mode('black', 'white')}
             size="md"
             rounded="full"
-            icon={<BsGithub fontSize={16} color="white" />} />
+            icon={<BsGithub fontSize={16} color={mode('white', 'black')} />} />
         </HStack>
         <Spacer />
         <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>August 6, 2022</Text>
+          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>August 14, 2022</Text>
         </HStack>
       </Stack>
     </Container>

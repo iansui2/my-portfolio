@@ -23,6 +23,15 @@ const container = {
   }
 }
 
+const techData = [
+  "../../images/react.png",
+  "../../images/html.png",
+  "../../images/css.png",
+  "../../images/javascript.png",
+  "../../images/sass.png",
+  "../../images/mui.png",
+]
+
 export const Hero = () => (
   <Box pt={32} pb={40}>
     <Container maxW="container.xl" h="full" justifyContent="center">
@@ -36,8 +45,20 @@ export const Hero = () => (
               <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="2xl">I Have Frontend Web Development Skills and Experience</Heading>
             </MotionBox>  
             <MotionBox variants={item}>
-              <Text fontWeight="semibold" fontSize="lg" w={{ base: 'auto', lg: '500px' }} pb={4}>Hi, I&rsquo;m Ian Sui and I&rsquo;m a Web Developer and My Current Tech Stack is ReactJS, HTML, CSS, Material UI and Sass.</Text>
+              <Text fontWeight="semibold" fontSize="lg">Hi, I&rsquo;m Ian Sui and I&rsquo;m a Web Developer.</Text>
             </MotionBox>  
+            <MotionBox variants={item}>
+              <Text fontWeight="semibold" fontSize="lg">Current Tech Stack</Text>
+            </MotionBox>  
+            <HStack spacing={2} pb={4}>
+              {
+                techData.map((tech, techKey) => 
+                  <MotionBox key={techKey} variants={item}>
+                    <Image src={tech} alt="Tech" boxSize="30px" _hover={{ transform: 'scale(1.1)' }} />
+                  </MotionBox>
+                )
+              }
+            </HStack>
             <MotionBox variants={item}>
               <Stack direction={{ base: 'column', lg: 'row' }} spacing={4} pb={8}>
                 <Button 

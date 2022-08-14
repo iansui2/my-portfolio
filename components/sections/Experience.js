@@ -1,5 +1,26 @@
 import { Box, Heading, Text, VStack, Container, Stack, Image, HStack, List, ListItem, UnorderedList } from "@chakra-ui/react"
 import Flash from "react-reveal/Flash"
+import { MotionBox } from "../Motion";
+
+const item = {
+  hidden: { y: 0, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.3
+    }
+  }
+}
 
 const experienceData = [
   {
@@ -13,6 +34,7 @@ const experienceData = [
       "../../images/react.png",
       "../../images/html.png",
       "../../images/css.png",
+      "../../images/javascript.png",
       "../../images/sass.png",
       "../../images/mui.png",
     ],
@@ -32,6 +54,7 @@ const experienceData = [
       "../../images/next.png",
       "../../images/html.png",
       "../../images/css.png",
+      "../../images/javascript.png",
       "../../images/chakra.png"
     ],
     timeframe: "January 2022 - July 2022"
@@ -67,34 +90,43 @@ const experienceData = [
 export const Experience = ({ }) => (
   <Box id="experience" pos="relative" h="full" bg="blue.500" color="white" py={40}>
     <Container maxW="container.xl"> 
-      <VStack align="start" spacing={20}>
-        <Heading size="2xl">Work Experience</Heading>
-        {
-          experienceData.map((data, dataKey) => (
-            <Flash key={dataKey} left duration={1000}>
-              <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
-                <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
-                <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
-                  <Heading size="lg" textAlign="center">{data.title}</Heading>
-                  <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
-                  <Text fontWeight="bold" fontSize="xl" textAlign="center" mb={3}>{data.timeframe}</Text>
-                  <UnorderedList pl={6} pb={3}>
+      <MotionBox
+        variants={container}
+        initial="hidden"
+        animate="visible">
+        <VStack align="start" spacing={20}>
+          <Heading size="2xl">Work Experience</Heading>
+          {
+            experienceData.map((data, dataKey) => (
+              <Flash key={dataKey} left duration={1000}>
+                <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
+                  <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
+                  <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
+                    <Heading size="lg" textAlign="center">{data.title}</Heading>
+                    <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
+                    <Text fontWeight="bold" fontSize="xl" textAlign="center" mb={3}>{data.timeframe}</Text>
+                    <UnorderedList pl={6} pb={3}>
+                      {
+                        data.description.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                      }
+                    </UnorderedList>
+                    <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
+                    <HStack spacing={2}>
                     {
-                      data.description.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                      data.technologies.map((tech, techKey) => 
+                        <MotionBox key={techKey} variants={item}>
+                          <Image key={techKey} src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                        </MotionBox>
+                      )
                     }
-                  </UnorderedList>
-                  <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
-                  <HStack spacing={2}>
-                  {
-                    data.technologies.map((tech, techKey) => <Image key={techKey} src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />)
-                  }
-                  </HStack>
-                </VStack>
-              </Stack>
-            </Flash>
-          )) 
-        }
-      </VStack>
+                    </HStack>
+                  </VStack>
+                </Stack>
+              </Flash>
+            )) 
+          }
+        </VStack>
+      </MotionBox>
     </Container>
   </Box>
 )

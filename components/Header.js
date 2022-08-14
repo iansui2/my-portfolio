@@ -43,15 +43,26 @@ export const Header = ({ title, image }) => {
               <Heading size="lg" color="blue.500">Ian Sui</Heading>
             </HStack>
           </Link>        
-          <IconButton 
-            variant="ghost"
-            borderRadius="xs"
-            size="md"
-            color="black"
-            _focus={{ borderColor: 'primary.500' }}
-            icon={<GiHamburgerMenu fontSize={24} />}
-            onClick={onOpen}
-          />
+          <HStack spacing={2}>
+            <IconButton
+              size="sm"
+              rounded="full"
+              bg="blue.500"
+              _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+              _active={{ bgColor: 'blue.200' }}
+              _focus={{ borderColor: 'white' }}
+              onClick={toggleColorMode}
+              icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
+            />
+            <IconButton 
+              variant="ghost"
+              borderRadius="xs"
+              size="md"
+              _focus={{ borderColor: 'primary.500' }}
+              icon={<GiHamburgerMenu fontSize={24} color={mode('black', 'white')} />}
+              onClick={onOpen}
+            />
+          </HStack>  
         </HStack>
         <MobileDrawer isOpen={isOpen} onClose={onClose}>
           <VStack h="full" w="full" align="start">
