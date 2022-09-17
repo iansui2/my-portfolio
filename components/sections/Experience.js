@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack, Container, Stack, Image, HStack, List, ListItem, UnorderedList } from "@chakra-ui/react"
+import { Box, Heading, Text, VStack, Container, Wrap, Stack, Image, HStack, List, ListItem, UnorderedList } from "@chakra-ui/react"
 import Flash from "react-reveal/Flash"
 import { MotionBox } from "../Motion";
 
@@ -37,6 +37,8 @@ const experienceData = [
       "../../images/javascript.png",
       "../../images/sass.png",
       "../../images/mui.png",
+      "../../images/api.png",
+      "../../images/form.io.png"
     ],
     timeframe: "July 2022 - Present"
   },
@@ -55,7 +57,8 @@ const experienceData = [
       "../../images/html.png",
       "../../images/css.png",
       "../../images/javascript.png",
-      "../../images/chakra.png"
+      "../../images/chakra.png",
+      "../../images/graphql.png"
     ],
     timeframe: "January 2022 - July 2022"
   },
@@ -111,7 +114,7 @@ export const Experience = ({ }) => (
                       }
                     </UnorderedList>
                     <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
-                    <HStack spacing={2}>
+                    <Wrap spacing={2}>
                     {
                       data.technologies.map((tech, techKey) => 
                         <MotionBox key={techKey} variants={item}>
@@ -119,7 +122,7 @@ export const Experience = ({ }) => (
                         </MotionBox>
                       )
                     }
-                    </HStack>
+                    </Wrap>
                   </VStack>
                 </Stack>
               </Flash>

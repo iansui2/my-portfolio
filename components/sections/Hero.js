@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Text, Container, VStack, Button, IconButton, Image, Stack, useColorModeValue as mode } from "@chakra-ui/react";
+import { Box, Heading, Wrap, HStack, Text, Container, VStack, Button, IconButton, Image, Stack, useColorModeValue as mode } from "@chakra-ui/react";
 import { AiFillFilePdf } from 'react-icons/ai'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { MotionBox } from "../Motion";
@@ -30,6 +30,8 @@ const techData = [
   "../../images/javascript.png",
   "../../images/sass.png",
   "../../images/mui.png",
+  "../../images/api.png",
+  "../../images/form.io.png"
 ]
 
 export const Hero = () => (
@@ -50,15 +52,15 @@ export const Hero = () => (
             <MotionBox variants={item}>
               <Text fontWeight="semibold" fontSize="lg">Current Tech Stack</Text>
             </MotionBox>  
-            <HStack spacing={2} pb={4}>
+            <Wrap pb={4}>
               {
                 techData.map((tech, techKey) => 
                   <MotionBox key={techKey} variants={item}>
-                    <Image src={tech} alt="Tech" boxSize="30px" _hover={{ transform: 'scale(1.1)' }} />
+                    <Image src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
                   </MotionBox>
                 )
               }
-            </HStack>
+            </Wrap>
             <MotionBox variants={item}>
               <Stack direction={{ base: 'column', lg: 'row' }} spacing={4} pb={8}>
                 <Button 
