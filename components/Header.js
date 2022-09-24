@@ -11,6 +11,7 @@ import { MdOutlineWork } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
 import { useRouter } from 'next/router'
+// import { IconBar } from './IconBar'
 
 const links = [
   {
@@ -36,34 +37,6 @@ export const Header = ({ title, image }) => {
   return (
     <Box w="full" zIndex={1000} bg={mode('rgba(255,255,255,0.7)', 'rgba(0,0,0,0.7)')} pos="fixed" py={6}>
       <Container maxW="container.xl" color="white">
-        <HStack justify="space-between" display={{ base: 'flex', md: 'none' }} spacing={2}>
-          <Link href="/" passHref>
-            <HStack spacing={4}>
-              <Image h="50px" src={image} alt="Ian Sui Icon" />
-              <Heading size="lg" color="blue.500">Ian Sui</Heading>
-            </HStack>
-          </Link>        
-          <HStack spacing={2}>
-            <IconButton
-              size="sm"
-              rounded="full"
-              bg="blue.500"
-              _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
-              _active={{ bgColor: 'blue.200' }}
-              _focus={{ borderColor: 'white' }}
-              onClick={toggleColorMode}
-              icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
-            />
-            <IconButton 
-              variant="ghost"
-              borderRadius="xs"
-              size="md"
-              _focus={{ borderColor: 'primary.500' }}
-              icon={<GiHamburgerMenu fontSize={24} color={mode('black', 'white')} />}
-              onClick={onOpen}
-            />
-          </HStack>  
-        </HStack>
         <MobileDrawer isOpen={isOpen} onClose={onClose}>
           <VStack h="full" w="full" align="start">
             <HStack w="full" justify="space-between" py={10} color="white">
@@ -153,35 +126,68 @@ export const Header = ({ title, image }) => {
             </HStack>
           </VStack>  
         </MobileDrawer>
-        <HStack pos="relative" display={{ base: 'none', md: 'flex' }}>
-          <Link href="/" passHref>
-            <HStack spacing={4} onClick={() => setChosenLink('')}>
-              <Image h="50px" src={image} alt="Ian Sui Icon" />
-              <Heading size="lg" color="blue.500">Ian Sui</Heading>
-            </HStack>
-          </Link>     
-          <HStack spacing={12} pos="absolute" top={4} left={0} w="full" justify="center">
-            {
-              links.map((link, linkKey) => (
-                <Link key={linkKey} href={link.href} passHref>
-                  <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _focus={{ borderColor: 'blue.500' }} borderColor="blue.500" borderBottomWidth={chosenLink == link.title ? 4 : 0} _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
-                </Link>  
-              ))  
-            }
-          </HStack>      
-          <Spacer />
-          <IconButton
-            size="sm"
-            rounded="full"
-            bg="blue.500"
-            _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
-            _active={{ bgColor: 'blue.200' }}
-            _focus={{ borderColor: 'white' }}
-            onClick={toggleColorMode}
-            icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
-          />
+        <HStack pos="relative" w="full">
+          <IconBar image={image} />
+          <HStack display={{ base: 'none', md: 'flex' }} w="full">
+            <HStack spacing={12} pos="absolute" top={4} left={0} w="full" justify="center">   
+              {
+                links.map((link, linkKey) => (
+                  <Link key={linkKey} href={link.href} passHref>
+                    <Button variant="link" fontSize="lg" color={chosenLink == link.title ? 'blue.500' : mode('black', 'white')} _focus={{ borderColor: 'blue.500' }} borderColor="blue.500" borderBottomWidth={chosenLink == link.title ? 4 : 0} _hover={{ color: 'blue.500', borderBottomWidth: 4, borderColor: 'blue.500' }} onClick={() => setChosenLink(link.title)}>{link.title}</Button>
+                  </Link>  
+                ))  
+              }
+            </HStack>      
+            <Spacer />
+            <IconButton
+              size="sm"
+              rounded="full"
+              bg="blue.500"
+              _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+              _active={{ bgColor: 'blue.200' }}
+              _focus={{ borderColor: 'white' }}
+              onClick={toggleColorMode}
+              icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
+            />
+          </HStack>  
         </HStack>
       </Container>
     </Box>
+  )
+}
+
+const IconBar = ({ image }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  return (
+      <HStack justify="space-between" spacing={2} w="full">
+        <Link href="/" passHref>
+            <HStack spacing={4} w="300px">
+              <Image h="50px" src={image} alt="Ian Sui Icon" />
+              <Heading size="lg" color="blue.500">Ian Sui</Heading>
+            </HStack>
+        </Link>  
+        <HStack spacing={2} display={{ base: 'flex', md: 'none' }}>
+            <IconButton
+                size="sm"
+                rounded="full"
+                bg="blue.500"
+                _hover={{ bgColor: 'blue.200', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+                _active={{ bgColor: 'blue.200' }}
+                _focus={{ borderColor: 'white' }}
+                onClick={toggleColorMode} 
+                icon={colorMode == 'light' ? <IoMoonOutline color="white" /> : <IoSunnyOutline color="white" />}
+            />
+            <IconButton 
+                variant="ghost"
+                borderRadius="xs"
+                size="md"
+                _focus={{ borderColor: 'primary.500' }}
+                icon={<GiHamburgerMenu fontSize={24} color={mode('black', 'white')} />}
+                onClick={onOpen}
+            />
+        </HStack>  
+    </HStack>     
   )
 }
