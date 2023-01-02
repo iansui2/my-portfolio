@@ -38,7 +38,11 @@ const experienceData = [
       "../../images/sass.png",
       "../../images/mui.png",
       "../../images/api.png",
-      "../../images/form.io.png"
+      "../../images/form.io.png",
+      "../../images/php.png",
+      "../../images/lumen.png",
+      "../../images/nodejs.png",
+      "../../images/mysql.png",
     ],
     timeframe: "July 2022 - Present"
   },

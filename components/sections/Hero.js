@@ -31,7 +31,11 @@ const techData = [
   "../../images/sass.png",
   "../../images/mui.png",
   "../../images/api.png",
-  "../../images/form.io.png"
+  "../../images/form.io.png",
+  "../../images/php.png",
+  "../../images/lumen.png",
+  "../../images/nodejs.png",
+  "../../images/mysql.png",
 ]
 
 export const Hero = () => (

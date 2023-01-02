@@ -11,7 +11,6 @@ import { MdOutlineWork } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
 import { useRouter } from 'next/router'
-// import { IconBar } from './IconBar'
 
 const links = [
   {
@@ -127,7 +126,7 @@ export const Header = ({ title, image }) => {
           </VStack>  
         </MobileDrawer>
         <HStack pos="relative" w="full">
-          <IconBar image={image} />
+          <IconBar colorMode={colorMode} toggleColorMode={toggleColorMode} onOpen={onOpen} image={image} />
           <HStack display={{ base: 'none', md: 'flex' }} w="full">
             <HStack spacing={12} pos="absolute" top={4} left={0} w="full" justify="center">   
               {
@@ -156,10 +155,7 @@ export const Header = ({ title, image }) => {
   )
 }
 
-const IconBar = ({ image }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
+const IconBar = ({ colorMode, toggleColorMode, onOpen, image }) => {
   return (
       <HStack justify="space-between" spacing={2} w="full">
         <Link href="/" passHref>
