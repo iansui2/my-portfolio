@@ -9,7 +9,7 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { IoSettings, IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
 import { MdOutlineWork } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose, AiFillProject } from 'react-icons/ai'
+import { AiOutlineClose, AiFillProject, AiFillFilePdf } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 
 const links = [
@@ -122,6 +122,18 @@ export const Header = ({ title, image }) => {
                 size="md"
                 rounded="full"
                 icon={<BsGithub fontSize={16} color={mode('white', 'black')} />} />
+              <IconButton 
+                as="a" 
+                href={`../${process.env.REACT_APP_PORTFOLIO}`}
+                target="_blank"
+                _hover={{ bgColor: 'yellow.300', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+                _active={{ bgColor: 'yellow.300' }}
+                _focus={{ borderColor: 'yellow.300' }}
+                bgColor="yellow.500" 
+                color="white"
+                size="md"
+                rounded="full"
+                icon={<AiFillFilePdf fontSize={18} color="white" />} />  
             </HStack>
           </VStack>  
         </MobileDrawer>

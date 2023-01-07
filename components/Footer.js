@@ -1,4 +1,5 @@
 import { Box, HStack, Text, Spacer, Container, Stack, IconButton, useColorModeValue as mode } from "@chakra-ui/react";
+import { AiFillFilePdf } from 'react-icons/ai'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 export const Footer = ({ }) => (
@@ -33,11 +34,23 @@ export const Footer = ({ }) => (
             size="md"
             rounded="full"
             icon={<BsGithub fontSize={16} color={mode('white', 'black')} />} />
+          <IconButton 
+            as="a" 
+            href={`../${process.env.REACT_APP_PORTFOLIO}`}
+            target="_blank"
+            _hover={{ bgColor: 'yellow.300', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+            _active={{ bgColor: 'yellow.300' }}
+            _focus={{ borderColor: 'yellow.300' }}
+            bgColor="yellow.500" 
+            color="white"
+            size="md"
+            rounded="full"
+            icon={<AiFillFilePdf fontSize={18} color="white" />} />
         </HStack>
         <Spacer />
         <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>January 2, 2023</Text>
+          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>January 7, 2023</Text>
         </HStack>
       </Stack>
     </Container>

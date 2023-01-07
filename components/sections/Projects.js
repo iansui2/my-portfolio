@@ -2,17 +2,17 @@ import { Box, Container, VStack, Heading, Text, Image, Button, UnorderedList, Li
 import Pulse from "react-reveal/Pulse"
 
 const projectsData = [
-  {
-    title: "foodery",
-    description: "An app that lets you add, modify and remove food products using the GraphQL endpoint",
-    listItems: [
-      "You can add food products",
-      "You can modify and remove food products"
-    ],
-    image: "../images/foodery.png",
-    smallImage: "../images/foodery-iphone.png",
-    href: process.env.REACT_APP_FOODERY
-  },
+  // {
+  //   title: "foodery",
+  //   description: "An app that lets you add, modify and remove food products using the GraphQL endpoint",
+  //   listItems: [
+  //     "You can add food products",
+  //     "You can modify and remove food products"
+  //   ],
+  //   image: "../images/foodery.png",
+  //   smallImage: "../images/foodery-iphone.png",
+  //   href: process.env.REACT_APP_FOODERY
+  // },
   {
     title: "Mapsify",
     description: "An app that lets you explore the globe through the use of Google Maps Api",

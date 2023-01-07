@@ -48,7 +48,7 @@ export const Hero = () => (
           animate="visible">
           <VStack align="start" justify="center" h="700px" w={{ base: 'full', md: '300px', lg: '400px', xl: 'full' }} spacing={4}>
             <MotionBox variants={item}>
-              <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="2xl">I Have Frontend Web Development Skills and Experience</Heading>
+              <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="2xl">I Have Web Development Skills and Experience</Heading>
             </MotionBox>  
             <MotionBox variants={item}>
               <Text fontWeight="semibold" fontSize="lg">Hi, I&rsquo;m Ian Sui and I&rsquo;m a Web Developer.</Text>
@@ -85,14 +85,14 @@ export const Hero = () => (
                   as="a" 
                   href={`../${process.env.REACT_APP_PORTFOLIO}`}
                   target="_blank"
-                  _hover={{ bgColor: mode('gray.900', 'gray.300'), transform: 'scale(1.05)', transition: 'all 300ms ease' }}
-                  _active={{ bgColor: mode('gray.900', 'gray.300') }}
-                  _focus={{ borderColor: mode('gray.900', 'gray.300') }}
-                  bgColor={mode('black', 'white')} 
-                  color={mode('white', 'black')}
+                  _hover={{ bgColor: 'yellow.300', transform: 'scale(1.05)', transition: 'all 300ms ease' }}
+                  _active={{ bgColor: 'yellow.300' }}
+                  _focus={{ borderColor: 'yellow.300' }}
+                  bgColor="yellow.500" 
+                  color="white"
                   size="lg"
                   rounded="full"
-                  leftIcon={<AiFillFilePdf fontSize={18} color={mode('white', 'black')} />}>
+                  leftIcon={<AiFillFilePdf fontSize={18} color="white" />}>
                     My Portfolio
                 </Button>
               </Stack>
