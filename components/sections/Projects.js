@@ -14,6 +14,18 @@ const projectsData = [
   //   href: process.env.REACT_APP_FOODERY
   // },
   {
+    title: "Listy Cars",
+    description: "An app that lets you list cars, update and delete them.",
+    listItems: [
+      "You can list cars",
+      "You can updated the listed cars",
+      "You can delete the listed cars"
+    ],
+    image: "../images/listy-cars.png",
+    smallImage: "../images/listy-cars-pixel.png",
+    href: process.env.REACT_APP_LISTYCARS
+  },
+  {
     title: "Mapsify",
     description: "An app that lets you explore the globe through the use of Google Maps Api",
     listItems: [
@@ -21,7 +33,7 @@ const projectsData = [
       "You can use all of the functionalities of google maps"
     ],
     image: "../images/mapsify.png",
-    smallImage: "../images/mapsify-iphone.png",
+    smallImage: "../images/mapsify-pixel.png",
     href: process.env.REACT_APP_MAPSIFY
   },
   {
