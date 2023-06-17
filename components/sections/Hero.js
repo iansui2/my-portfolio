@@ -120,8 +120,8 @@ export const Hero = () => (
             scale: [1, 1.1, 1.1, 1.1, 1],
             borderRadius: ["20%", "20%", "50%", "50%", "5%"],
           }} 
-          pos="relative" bgImg="../images/design.png" bgSize="cover" h="500px" w={{ base: '300px', md: 'full' }}>
-          <Image pos="absolute" bottom={4} left={{ base: 2, md: 16 }} right={{ base: 2, md: 16 }} src="../images/image.png" alt="Design" w={{ base: '350px', md: '300px', lg: '400px', xl: '500px' }} />
+          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "400px", xl: "500px" }} w="full">
+          <Image pos="absolute" bottom={4} left={{ base: 2, md: 16 }} right={{ base: 2, md: 16 }} src="../images/image.png" alt="Design" w={{ md: '350px', lg: '400px', xl: '500px' }} />
         </MotionBox>
       </Stack>
     </Container>
