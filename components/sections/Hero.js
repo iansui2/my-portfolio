@@ -36,6 +36,8 @@ const techData = [
   "../../images/lumen.png",
   "../../images/nodejs.png",
   "../../images/mysql.png",
+  "../../images/grafana.png",
+  "../../images/amplify.png"
 ]
 
 export const Hero = () => (
@@ -117,8 +119,8 @@ export const Hero = () => (
             scale: [1, 1.1, 1.1, 1.1, 1],
             borderRadius: ["20%", "20%", "50%", "50%", "5%"],
           }} 
-          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "400px", xl: "500px" }} w="full">
-          <Image pos="absolute" bottom={4} left={{ base: 2, md: 16 }} right={{ base: 2, md: 16 }} src="../images/image.png" alt="Design" w={{ md: '350px', lg: '400px', xl: '500px' }} />
+          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "500px", xl: "700px" }} w="full">
+          <Image pos="absolute" bottom={4} left={{ base: 12, md: 16, xl: 48 }} right={{ base: 12, md: 16, xl: 48 }} src="../images/image.png" alt="Design" w={{ base: "250px", md: '350px', lg: '400px', xl: '400px' }} />
         </MotionBox>
       </Stack>
     </Container>

@@ -2,7 +2,7 @@ import { Box, HStack, Text, Spacer, Container, Stack, IconButton, useColorModeVa
 import { AiFillFilePdf } from 'react-icons/ai'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
-export const Footer = ({ }) => (
+export const Footer = () => (
   <Box py={4}>
     <Container maxW="container.xl">
       <Stack direction={{ base: 'column', md: 'row' }} w="full">

@@ -25,10 +25,11 @@ const container = {
 const experienceData = [
   {
     logo: "../../images/logo-1.png",
-    title: "Web Developer",
+    title: "Full Stack Web Developer",
     company: "Sparksoft Solutions",
     description: [
-      "Developed a system that will greatly help communities and cities in their daily lives"
+      "Developed a couple of websites that will be used in processing permits regarding constructing a building or interior renovation of a building",
+      "Have used a lot of technologies and libraries in making these websites on the frontend and backend"
     ],
     technologies: [
       "../../images/react.png",
@@ -43,6 +44,8 @@ const experienceData = [
       "../../images/lumen.png",
       "../../images/nodejs.png",
       "../../images/mysql.png",
+      "../../images/grafana.png",
+      "../../images/amplify.png"
     ],
     timeframe: "July 2022 - Present"
   },
