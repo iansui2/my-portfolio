@@ -43,15 +43,18 @@ const techData = [
 export const Hero = () => (
   <Box pt={32} pb={40}>
     <Container maxW="container.xl" h="full" justifyContent="center">
-      <Stack direction={{ base: 'column', md: 'row' }} align="center" justify="center" h="full" w="full" spacing={{ base: 0, lg: 24 }}>
+      <Stack direction={{ base: 'column', md: 'row' }} align="center" justify="center" h="full" w="full" spacing={{ base: 16, md: 4, lg: 24 }}>
         <MotionBox
           variants={container}
           initial="hidden"
           animate="visible">
           <VStack align="start" justify="center" h="700px" w={{ base: 'full', md: '300px', lg: '400px', xl: 'full' }} spacing={4}>
             <MotionBox variants={item}>
-              <Heading color="blue.500" w={{ base: 'auto', lg: '400px' }} size="2xl">I'am a Full Stack Web Developer with Skills and Experience</Heading>
+              <Heading color="blue.500" w={{ base: 'auto', md: '450px', lg: '400px' }} size="2xl">I'am a Full Stack Web Developer with Skills and Experience</Heading>
             </MotionBox>   
+            <MotionBox variants={item}>
+              <Heading color="yellow.500" w={{ base: 'auto', lg: '400px' }} size="lg">2 Years Working Experience</Heading>
+            </MotionBox> 
             <MotionBox variants={item}>
               <Text fontWeight="semibold" fontSize="lg">Current Tech Stack</Text>
             </MotionBox>  
@@ -119,8 +122,8 @@ export const Hero = () => (
             scale: [1, 1.1, 1.1, 1.1, 1],
             borderRadius: ["20%", "20%", "50%", "50%", "5%"],
           }} 
-          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "500px", xl: "700px" }} w="full">
-          <Image pos="absolute" bottom={4} left={{ base: 12, md: 16, xl: 48 }} right={{ base: 12, md: 16, xl: 48 }} src="../images/image.png" alt="Design" w={{ base: "250px", md: '350px', lg: '400px', xl: '400px' }} />
+          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "450px", lg: "550px", xl: "600px" }} w="full">
+          <Image pos="absolute" bottom={4} left={{ base: 12, md: 16, xl: 48 }} right={{ base: 12, md: 16, xl: 48 }} src="../images/image.png" alt="Design" w={{ base: "250px", md: '320px', lg: '350px', xl: '400px' }} />
         </MotionBox>
       </Stack>
     </Container>

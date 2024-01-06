@@ -47,7 +47,8 @@ const experienceData = [
       "../../images/grafana.png",
       "../../images/amplify.png"
     ],
-    timeframe: "July 2022 - Present"
+    timeframe: "July 2022 - Present",
+    category: "Work"
   },
   {
     logo: "../../images/logo-2.png",
@@ -80,7 +81,8 @@ const experienceData = [
     technologies: [
       "../../images/kotlin.png"
     ],
-    timeframe: "May 2021 - June 2021"
+    timeframe: "May 2021 - June 2021",
+    category: "Internship"
   },
   {
     logo: "../../images/logo-4.png",
@@ -104,34 +106,38 @@ export const Experience = ({ }) => (
         variants={container}
         initial="hidden"
         animate="visible">
+        <Heading size="2xl" mb={12}>Work Experience</Heading>
+        <Heading size="xl" color="yellow.500" align="center" mb={12}>Total Years of Working Experience: 2</Heading>
         <VStack align="start" spacing={20}>
-          <Heading size="2xl">Work Experience</Heading>
           {
             experienceData.map((data, dataKey) => (
               <Flash key={dataKey} left duration={1000}>
-                <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
-                  <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
-                  <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
-                    <Heading size="lg" textAlign="center">{data.title}</Heading>
-                    <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
-                    <Text fontWeight="bold" fontSize="xl" textAlign="center" mb={3}>{data.timeframe}</Text>
-                    <UnorderedList pl={6} pb={3}>
+                <Box>
+                  { data.category && <Heading size="xl" color="yellow.500" mb={12}>{data.category}</Heading> }
+                  <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
+                    <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
+                    <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>
+                      <Heading size="lg" textAlign="center">{data.title}</Heading>
+                      <Text fontWeight="bold" fontSize="xl" textAlign="center">{data.company}</Text>
+                      <Text fontWeight="bold" fontSize="xl" textAlign="center" mb={3}>{data.timeframe}</Text>
+                      <UnorderedList pl={6} pb={3}>
+                        {
+                          data.description.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                        }
+                      </UnorderedList>
+                      <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
+                      <Wrap spacing={2}>
                       {
-                        data.description.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                        data.technologies.map((tech, techKey) => 
+                          <MotionBox key={techKey} variants={item}>
+                            <Image key={techKey} src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
+                          </MotionBox>
+                        )
                       }
-                    </UnorderedList>
-                    <Text fontSize="lg" fontWeight="semibold">Tech Stack</Text>
-                    <Wrap spacing={2}>
-                    {
-                      data.technologies.map((tech, techKey) => 
-                        <MotionBox key={techKey} variants={item}>
-                          <Image key={techKey} src={tech} alt="Tech" boxSize="50px" _hover={{ transform: 'scale(1.1)' }} />
-                        </MotionBox>
-                      )
-                    }
-                    </Wrap>
-                  </VStack>
-                </Stack>
+                      </Wrap>
+                    </VStack>
+                  </Stack>
+                </Box>  
               </Flash>
             )) 
           }

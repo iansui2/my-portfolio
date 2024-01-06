@@ -73,6 +73,14 @@ const skillsData = [
     image: "../images/mysql.png"
   },
   {
+    title: "Grafana",
+    image: "../images/grafana.png"
+  },
+  {
+    title: "Amplify",
+    image: "../images/amplify.png"
+  },
+  {
     title: "NextJS",
     image: "../images/next.png",
   },
@@ -122,7 +130,7 @@ export const Skills = ({ }) => (
           <Heading size="lg">Featured Skills</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
             {
-              skillsData.slice(0,12).map((skill, skillKey) => (
+              skillsData.slice(0,14).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px" alt={skill.title} />
@@ -135,7 +143,7 @@ export const Skills = ({ }) => (
           <Heading size="lg">Other Skills</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
             {
-              skillsData.slice(12,18).map((skill, skillKey) => (
+              skillsData.slice(14,18).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />

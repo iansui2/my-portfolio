@@ -23,6 +23,7 @@ const projectsData = [
     ],
     image: "../images/listy-cars.png",
     smallImage: "../images/listy-cars-pixel.png",
+    category: "Websites 🌐",
     href: process.env.REACT_APP_LISTYCARS
   },
   {
@@ -44,6 +45,7 @@ const projectsData = [
       "Provides details about the earthquake that has happened",
       "Shows trivia about earthquakes"
     ],
+    category: "Mobile Apps 📱",
     image: "../images/earthquake-report.png",
     file: "../files/earthquake-report.apk"
   },
@@ -72,19 +74,22 @@ export const Projects = ({ }) => (
 
                 return (
                   <Pulse key={dataKey} duration={1000}>
-                    <VStack direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
-                      <Image src={imageData} h="500px" alt={data.title} _hover={{ transform: 'scale(1.05)', transition: 'all 300ms ease' }} />
-                      <VStack align="center">
-                        <Heading>{data.title}</Heading>
-                        <Text pb={4} fontSize="lg">{data.description}</Text>
-                        <UnorderedList pl={6} pb={3}>
-                          {
-                            data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
-                          }
-                        </UnorderedList>
-                        <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
-                      </VStack>
-                    </VStack>  
+                    <Box>
+                      <VStack direction={{ base: 'column', md: 'row' }} align="center" w={{ base: 'auto', md: 'container.md', lg: 'container.lg' }} spacing={12}>
+                        { data.category && <Heading size="xl" color="yellow.500" align="center">{data.category}</Heading> }
+                        <Image src={imageData} h="500px" alt={data.title} _hover={{ transform: 'scale(1.05)', transition: 'all 300ms ease' }} />
+                        <VStack align="center">
+                          <Heading>{data.title}</Heading>
+                          <Text pb={4} fontSize="lg">{data.description}</Text>
+                          <UnorderedList pl={6} pb={3}>
+                            {
+                              data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
+                            }
+                          </UnorderedList>
+                          <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
+                        </VStack>
+                      </VStack>  
+                    </Box>  
                   </Pulse>
                 )
               })

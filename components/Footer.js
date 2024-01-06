@@ -50,7 +50,7 @@ export const Footer = () => (
         <Spacer />
         <HStack spacing={1} fontWeight="bold">
           <Text>Last Updated on</Text>
-          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>June 24, 2023</Text>
+          <Text color="blue.500" cursor="default" _hover={{ transform: 'scale(1.05)' }}>January 6, 2023</Text>
         </HStack>
       </Stack>
     </Container>
