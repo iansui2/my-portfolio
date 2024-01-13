@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import { 
   Box, Button, Container, Heading, HStack, IconButton, 
-  Spacer, useDisclosure, VStack, Image, useColorModeValue as mode, useColorMode, Icon
+  Spacer, useDisclosure, VStack, Image, useColorModeValue as mode, useColorMode,
 } from "@chakra-ui/react"
 import { MobileDrawer } from "./Drawer"
 import Link from "next/link"
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { IoSettings, IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
-import { MdOutlineWork } from 'react-icons/md'
+import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose, AiFillProject, AiFillFilePdf } from 'react-icons/ai'
+import { AiOutlineClose, AiFillFilePdf } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 
 const links = [

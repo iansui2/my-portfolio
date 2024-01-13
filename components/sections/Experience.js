@@ -107,7 +107,7 @@ export const Experience = ({ }) => (
         initial="hidden"
         animate="visible">
         <Heading size="2xl" mb={12}>Work Experience</Heading>
-        <Heading size="xl" color="yellow.500" align="center" mb={12}>Total Years of Working Experience: 2</Heading>
+        <Heading size="xl" color="yellow.500" align="center" mb={12}>2 Years of Working Experience</Heading>
         <VStack align="start" spacing={20}>
           {
             experienceData.map((data, dataKey) => (

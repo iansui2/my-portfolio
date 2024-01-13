@@ -45,7 +45,7 @@ const projectsData = [
       "Provides details about the earthquake that has happened",
       "Shows trivia about earthquakes"
     ],
-    category: "Mobile Apps 📱",
+    category: "Android Apps 📱",
     image: "../images/earthquake-report.png",
     file: "../files/earthquake-report.apk"
   },
