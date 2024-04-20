@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <Head>
         <title>Ian Sui - Full Stack Developer</title>
-        <meta name="title" content="Ian Sui - Full Stack Developer" />
-        <meta property="og:title" content="Ian Sui - Full Stack Developer" />
+        <meta name="title" content="Ian Sui - Software Engineer" />
+        <meta property="og:title" content="Ian Sui - Software Engineer" />
         <meta property="og:image" content="../images/i.png" />
         <link rel="icon" type="image/png" href="../images/i.png" />
       </Head>

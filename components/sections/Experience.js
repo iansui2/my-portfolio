@@ -25,7 +25,7 @@ const container = {
 const experienceData = [
   {
     logo: "../../images/logo-1.png",
-    title: "Full Stack Web Developer",
+    title: "Software Engineer",
     company: "Sparksoft Solutions",
     description: [
       "Developed a couple of websites that will be used in processing permits regarding constructing a building or interior renovation of a building",

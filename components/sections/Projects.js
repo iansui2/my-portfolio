@@ -13,19 +13,19 @@ const projectsData = [
   //   smallImage: "../images/foodery-iphone.png",
   //   href: process.env.REACT_APP_FOODERY
   // },
-  {
-    title: "Listy Cars",
-    description: "An app that lets you list cars, update and delete them.",
-    listItems: [
-      "You can list cars",
-      "You can updated the listed cars",
-      "You can delete the listed cars"
-    ],
-    image: "../images/listy-cars.png",
-    smallImage: "../images/listy-cars-pixel.png",
-    category: "Websites 🌐",
-    href: process.env.REACT_APP_LISTYCARS
-  },
+  // {
+  //   title: "Listy Cars",
+  //   description: "An app that lets you list cars, update and delete them.",
+  //   listItems: [
+  //     "You can list cars",
+  //     "You can updated the listed cars",
+  //     "You can delete the listed cars"
+  //   ],
+  //   image: "../images/listy-cars.png",
+  //   smallImage: "../images/listy-cars-pixel.png",
+  //   category: "Websites 🌐",
+  //   href: process.env.REACT_APP_LISTYCARS
+  // },
   {
     title: "Mapsify",
     description: "An app that lets you explore the globe through the use of Google Maps Api",
@@ -35,6 +35,7 @@ const projectsData = [
     ],
     image: "../images/mapsify.png",
     smallImage: "../images/mapsify-pixel.png",
+    category: "Website 🌐",
     href: process.env.REACT_APP_MAPSIFY
   },
   {
@@ -45,7 +46,7 @@ const projectsData = [
       "Provides details about the earthquake that has happened",
       "Shows trivia about earthquakes"
     ],
-    category: "Android Apps 📱",
+    category: "Android Applications 📱",
     image: "../images/earthquake-report.png",
     file: "../files/earthquake-report.apk"
   },

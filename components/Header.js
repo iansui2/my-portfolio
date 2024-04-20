@@ -98,6 +98,7 @@ export const Header = ({ title, image }) => {
               }
             </VStack>
             <Spacer />
+            <Heading size="sm" pb={2} color="yellow.500">Check out about me here: </Heading>
             <HStack pb={4}>
               <IconButton 
                 as="a" 
