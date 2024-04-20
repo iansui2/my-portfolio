@@ -56,7 +56,7 @@ export const Hero = () => (
               <Heading color="yellow.500" w={{ base: 'auto', lg: '400px' }} size="lg">2 Years Working Experience</Heading>
             </MotionBox> 
             <MotionBox variants={item}>
-              <Text fontWeight="semibold" fontSize="lg">Current Tech Stack</Text>
+              <Text fontWeight="bold" fontSize="lg">Current Tech Stack</Text>
             </MotionBox>  
             <Wrap pb={4}>
               {
@@ -101,7 +101,7 @@ export const Hero = () => (
             </MotionBox>
             <MotionBox variants={item}>  
               <HStack spacing={8}>
-                <Text fontWeight="semibold">Check out my projects on</Text>
+                <Text fontWeight="bold">Check out my projects on</Text>
                 <IconButton
                   as="a" 
                   href={process.env.REACT_APP_GITHUB} 
