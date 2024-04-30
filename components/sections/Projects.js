@@ -35,7 +35,7 @@ const projectsData = [
       "You can use all of the functionalities of google maps"
     ],
     image: "../images/mapsify.png",
-    smallImage: "../images/mapsify-pixel.png",
+    smallImage: "../images/mapsify-phone.png",
     href: process.env.REACT_APP_MAPSIFY
   },
   {
