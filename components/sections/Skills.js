@@ -143,7 +143,7 @@ export const Skills = () => (
           <Heading size="lg">Other Skills</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)', xl: 'repeat(5, 1fr)' }} gap={12} pb={10}>
             {
-              skillsData.slice(14,19).map((skill, skillKey) => (
+              skillsData.slice(14,20).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />
@@ -156,7 +156,7 @@ export const Skills = () => (
           <Heading size="lg">Operating Systems</Heading>
           <Grid templateColumns={{ base: 'auto', md: 'repeat(3, 1fr)' }} gap={12}>
             {
-              skillsData.slice(19,22).map((skill, skillKey) => (
+              skillsData.slice(20,23).map((skill, skillKey) => (
                 <MotionBox key={skillKey} variants={item}> 
                   <VStack boxShadow="xl" borderRadius="xl" bg="blue.500" color="white" p={8} align="center" spacing={2} _hover={{ transform: 'scale(1.1)' }}>
                     <Image src={skill.image} boxSize="70px"  alt={skill.title} />
