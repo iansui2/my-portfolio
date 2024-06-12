@@ -47,8 +47,7 @@ const experienceData = [
       "../../images/grafana.png",
       "../../images/amplify.png"
     ],
-    timeframe: "July 2022 - Present",
-    category: "Work"
+    timeframe: "July 2022 - Present"
   },
   {
     logo: "../../images/logo-2.png",
@@ -69,33 +68,6 @@ const experienceData = [
       "../../images/graphql.png"
     ],
     timeframe: "January 2022 - July 2022"
-  },
-  {
-    logo: "../../images/logo-3.jpeg",
-    title: "Software Developer",
-    company: "Evotech",
-    description: [
-      "Planned about making a simple application that will help many people in my chosen programming language",
-      "Developed a simple application on Kotlin showing my basic skills on Kotlin for Android Devices",
-    ],   
-    technologies: [
-      "../../images/kotlin.png"
-    ],
-    timeframe: "May 2021 - June 2021",
-    category: "Internship"
-  },
-  {
-    logo: "../../images/logo-4.png",
-    title: "C# Developer",
-    company: "BC TECH HQ",
-    description: [
-      "Learned about C# programming language, it's rules and syntax",
-      "Developed basic C# programs",
-    ],      
-    technologies: [
-      "../../images/csharp.png"
-    ],  
-    timeframe: "February 2018"
   }
 ]
 
@@ -113,7 +85,6 @@ export const Experience = ({ }) => (
             experienceData.map((data, dataKey) => (
               <Flash key={dataKey} left duration={1000}>
                 <Box>
-                  { data.category && <Heading size="xl" color="yellow.500" mb={12}>{data.category}</Heading> }
                   <Stack direction={{ base: 'column', md: 'row' }} align={{ base: 'start', md: 'center' }} spacing={12}>
                     <Image src={data.logo} alt="Company Logo" boxSize="150px" _hover={{ transform: 'scale(1.1)' }} />
                     <VStack borderLeftWidth={5} borderColor="blue.500" align="start" direction={{ base: 'column', md: 'row' }} spacing={2}>

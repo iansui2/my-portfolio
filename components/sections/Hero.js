@@ -53,7 +53,7 @@ export const Hero = () => (
               <Heading color="blue.500" w={{ base: 'auto', md: '450px', lg: '400px' }} size="2xl">I'am a Software Engineer with Skills and Experience</Heading>
             </MotionBox>   
             <MotionBox variants={item}>
-              <Heading color="yellow.500" w={{ base: 'auto', lg: '400px' }} size="lg">2 Years Working Experience</Heading>
+              <Heading color="yellow.500" w={{ base: 'auto', lg: '400px' }} size="lg">2 Years of Working Experience</Heading>
             </MotionBox> 
             <MotionBox variants={item}>
               <Text fontWeight="bold" fontSize="lg">Current Tech Stack</Text>
@@ -122,8 +122,8 @@ export const Hero = () => (
             scale: [1, 1.1, 1.1, 1.1, 1],
             borderRadius: ["20%", "20%", "50%", "50%", "5%"],
           }} 
-          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "350px", md: "450px", lg: "550px", xl: "600px" }} w="full">
-          <Image pos="absolute" bottom={4} left={{ base: 12, md: 16, xl: 48 }} right={{ base: 12, md: 16, xl: 48 }} src="../images/image.png" alt="Design" w={{ base: "250px", md: '320px', lg: '350px', xl: '400px' }} />
+          pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "320px", md: "450px", lg: "500px", xl: "600px" }} w="full">
+          <Image pos="absolute" bottom={12} left={{ base: 4, md: 16, xl: 36 }} right={{ base: 4, md: 16, xl: 36 }} src="../images/image.png" alt="Design" w={{ base: "300px", md: '360px', lg: '400px', xl: '500px' }} />
         </MotionBox>
       </Stack>
     </Container>
