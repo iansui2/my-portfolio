@@ -123,7 +123,7 @@ export const Hero = () => (
             borderRadius: ["20%", "20%", "50%", "50%", "5%"],
           }} 
           pos="relative" bgImg="../images/design.png" bgSize="cover" h={{ base: "320px", md: "450px", lg: "500px", xl: "600px" }} w="full">
-          <Image pos="absolute" bottom={12} left={{ base: 4, md: 16, xl: 36 }} right={{ base: 4, md: 16, xl: 36 }} src="../images/image.png" alt="Design" w={{ base: "300px", md: '360px', lg: '400px', xl: '500px' }} />
+          <Image pos="absolute" bottom={12} left={{ base: 6, md: 16, xl: 36 }} right={{ base: 6, md: 16, xl: 36 }} src="../images/image.png" alt="Design" w={{ base: "280px", md: '360px', lg: '400px', xl: '500px' }} />
         </MotionBox>
       </Stack>
     </Container>
