@@ -87,7 +87,7 @@ export const Projects = ({ }) => (
                               data.listItems.map((desc, descKey) => <ListItem key={descKey} fontSize="lg">{desc}</ListItem>)
                             }
                           </UnorderedList>
-                          <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'View Demo'}</Button>
+                          <Button as="a" href={data.file ? data.file : data.href} target="_blank" rounded="full" minW="130px" bgColor="green.400" _hover={{ bgColor: 'green.100', transform: 'scale(1.05)', transition: 'all 300ms ease' }} _active={{ bgColor: 'green.100' }} _focus={{ borderColor: 'green.400' }}>{data.file ? 'Download' : 'Visit Website'}</Button>
                         </VStack>
                       </VStack>  
                     </Box>  
