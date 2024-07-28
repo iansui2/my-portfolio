@@ -3,6 +3,18 @@ import Pulse from "react-reveal/Pulse"
 
 const projectsData = [
   {
+    title: "Tic Tac Toe",
+    description: "A simple game of Tic Tac Toe created using React and NodeJS",
+    listItems: [
+      "You can play the game of Tic Tac Toe",
+      "You can save and delete your progress"
+    ],
+    image: "../images/tictactoe.png",
+    smallImage: "../images/tictactoe-phone.png",
+    category: "Website 🌐",
+    href: process.env.REACT_APP_TICTACTOE
+  },
+  {
     title: "foodery",
     description: "An app that lets you add, modify and remove food products using the GraphQL endpoint i made using Hygraph",
     listItems: [
@@ -11,7 +23,6 @@ const projectsData = [
     ],
     image: "../images/foodery.png",
     smallImage: "../images/foodery-phone.png",
-    category: "Website 🌐",
     href: process.env.REACT_APP_FOODERY
   },
   // {
